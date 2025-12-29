@@ -3,676 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Oppty TechHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Company Overview & Creative Core Values</title>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* =========================================
-           1. RESET & BASE STYLES
-           ========================================= */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* --- 1. RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
-            color: #0f2b4a; /* Primary Navy */
-            line-height: 1.7;
-            overflow-x: hidden;
+            background-color: #f4f8fb; /* Light Blue-Grey Background */
+            color: #444444;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
-        /* Container */
-        .container {
+        /* --- 2. CONTAINER & UTILITIES --- */
+        .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 80px 20px;
         }
-
-        /* Section Spacing */
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        /* Background Colors */
-        .bg-light { background-color: #f4f7fb; }
-        .bg-navy { background-color: #0f2b4a; color: #ffffff; }
 
         /* Animation Classes */
-        .fade-up {
+        .reveal-up {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
         }
 
-        /* Headers */
-        .section-header {
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .active {
+            opacity: 1 !important;
+            transform: translate(0, 0) !important;
+        }
+
+        /* --- 3. HEADER --- */
+        .section-intro {
             text-align: center;
-            margin-bottom: 60px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 70px auto;
         }
-        
-        .section-title {
+
+        .headline {
+            color: #003366; /* Navy Blue */
             font-size: 2.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #0f2b4a;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #ff9f1c; /* Orange Accent */
-            border-radius: 2px;
-        }
-
-        .section-desc {
-            font-size: 1.1rem;
-            color: #666666;
-            margin-top: 15px;
-        }
-
-        /* Buttons */
-        .btn-primary {
-            display: inline-block;
-            background-color: #ff9f1c;
-            color: #ffffff;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 159, 28, 0.3);
-        }
-        .btn-primary:hover {
-            background-color: #e68e19;
-            transform: translateY(-3px);
-        }
-
-        /* =========================================
-           2. HERO SECTION
-           ========================================= */
-        .page-hero {
-            position: relative;
-            height: 450px;
-            background: linear-gradient(rgba(15, 43, 74, 0.85), rgba(15, 43, 74, 0.7)), 
-                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .breadcrumb {
-            font-size: 1.1rem;
-            color: #ff9f1c;
-            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* =========================================
-           3. WHO WE ARE (Executive Summary)
-           ========================================= */
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .intro-image-wrapper {
-            position: relative;
-        }
-
-        .intro-img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        /* Floating Badge */
-        .floating-badge {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            background-color: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            border-left: 5px solid #ff9f1c;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .badge-icon {
-            font-size: 2.5rem;
-            color: #0f2b4a;
-        }
-
-        .badge-text h4 {
-            font-size: 1.8rem;
-            color: #ff9f1c;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .badge-text span {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #555;
-            text-transform: uppercase;
-        }
-
-        .intro-text .sub-heading {
-            color: #ff9f1c;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .intro-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            color: #0f2b4a;
-            line-height: 1.3;
-        }
-
-        .intro-text p {
-            color: #666;
+            letter-spacing: 1.5px;
             margin-bottom: 20px;
-            font-size: 1rem;
+            position: relative;
+            display: inline-block;
         }
 
-        .feature-list {
-            list-style: none;
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        /* Stylish Orange Underline */
+        .headline::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, #ff9e1b, #fbc02d);
+            margin: 10px auto 0;
+            border-radius: 5px;
         }
 
-        .feature-list li {
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            color: #0f2b4a;
-        }
-
-        .feature-list li i {
-            color: #ff9f1c;
-            margin-right: 12px;
+        .sub-headline {
             font-size: 1.1rem;
+            color: #666;
         }
 
-        /* =========================================
-           4. MISSION & VISION
-           ========================================= */
-        .mv-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        /* --- 4. MISSION & VISION (Cards) --- */
+        .mv-container {
+            display: flex;
             gap: 40px;
+            margin-bottom: 100px;
+            flex-wrap: wrap;
         }
 
-        .mv-card {
+        .mv-box {
+            flex: 1;
+            min-width: 300px;
             background: #ffffff;
-            padding: 50px 40px;
-            border-radius: 16px;
+            padding: 50px;
+            border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
-            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+            border-top: 6px solid #003366;
         }
 
-        .mv-card:hover {
+        .mv-box:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 51, 102, 0.15);
         }
 
-        .mv-card.mission { border-top: 6px solid #0f2b4a; }
-        .mv-card.vision { border-top: 6px solid #ff9f1c; }
-
-        .mv-icon {
-            font-size: 3rem;
-            margin-bottom: 25px;
-            display: inline-block;
-        }
-        .mission .mv-icon { color: #0f2b4a; }
-        .vision .mv-icon { color: #ff9f1c; }
-
-        .mv-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #0f2b4a;
+        .mv-box.vision-box {
+            border-top-color: #ff9e1b;
         }
 
-        .mv-card p { color: #666; }
-
-        /* =========================================
-           5. CORE VALUES
-           ========================================= */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .value-card {
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-            border-color: #ff9f1c;
-        }
-
-        .v-icon-box {
+        .icon-circle {
             width: 80px;
             height: 80px;
-            margin: 0 auto 25px;
-            background: rgba(15, 43, 74, 0.05);
+            background-color: #f4f8fb;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0f2b4a;
+            margin-bottom: 25px;
             font-size: 2rem;
-            transition: all 0.3s;
         }
 
-        .value-card:hover .v-icon-box {
-            background: #ff9f1c;
-            color: #ffffff;
-            transform: rotateY(180deg);
-        }
+        .mv-box.mission-box .icon-circle i { color: #003366; }
+        .mv-box.vision-box .icon-circle i { color: #ff9e1b; }
 
-        .value-card h4 {
+        .mv-heading {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #003366;
             margin-bottom: 15px;
-            font-size: 1.4rem;
-            color: #0f2b4a;
+        }
+
+        /* --- 5. CREATIVE CORE VALUES (Zig-Zag Layout) --- */
+        .core-values-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #003366;
+            margin-bottom: 60px;
             font-weight: 700;
         }
 
-        .value-card p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* =========================================
-           6. WHY CHOOSE US & STATS
-           ========================================= */
-        .stats-strip {
-            background-color: #0f2b4a;
-            color: #ffffff;
-            padding: 70px 0;
-            margin-bottom: 80px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3.5rem;
-            color: #ff9f1c;
-            margin-bottom: 5px;
-            font-weight: 800;
-        }
-
-        .stat-item p {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-
-        /* Accordion Section */
-        .why-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: flex-start;
-        }
-
-        .why-img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .accordion {
+        .value-row {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .acc-item {
-            background: #ffffff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .acc-item.active {
-            border-color: #ff9f1c;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .acc-header {
-            width: 100%;
-            padding: 20px;
-            background: #fff;
-            border: none;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            font-family: 'Poppins';
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #0f2b4a;
-            transition: background 0.3s;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            gap: 50px;
         }
 
-        .acc-item.active .acc-header {
-            background: #fdf5e8; /* Very light orange */
-            color: #e68e19;
+        /* Reverse direction for even rows to create zig-zag */
+        .value-row:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .acc-header i { transition: transform 0.3s; }
-        .acc-item.active .acc-header i { transform: rotate(180deg); }
-
-        .acc-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 20px;
-            color: #666;
+        /* Image Side */
+        .value-visual {
+            flex: 1;
+            position: relative;
         }
 
-        .acc-item.active .acc-body {
-            padding-bottom: 20px;
+        .value-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease;
+            display: block;
         }
 
-        /* =========================================
-           7. CALL TO ACTION (Footer)
-           ========================================= */
-        .cta-section {
-            text-align: center;
-            background-color: #f4f7fb;
-            padding: 80px 20px;
-            margin: 0 20px 50px 20px;
-            border-radius: 20px;
+        .value-row:hover .value-img {
+            transform: scale(1.02);
         }
 
-        .cta-section h2 { margin-bottom: 15px; font-size: 2.2rem; }
-        .cta-section p { margin-bottom: 30px; font-size: 1.1rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto; }
+        /* Text Side */
+        .value-details {
+            flex: 1;
+        }
+
+        .value-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #e0e0e0; /* Subtle grey background number */
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .value-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .value-name i {
+            color: #ff9e1b;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .value-desc {
+            font-size: 1.05rem;
+            color: #555;
+            position: relative;
+            z-index: 2;
+        }
 
         /* --- RESPONSIVE --- */
-        @media (max-width: 992px) {
-            .intro-grid, .mv-grid, .why-layout { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-            .page-hero { height: 350px; }
-            .floating-badge { right: 0; bottom: -20px; padding: 15px; }
-        }
-        @media (max-width: 600px) {
-            .page-hero h1 { font-size: 2.5rem; }
-            .feature-list { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
+        @media (max-width: 900px) {
+            .value-row, .value-row:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+            .mv-container {
+                flex-direction: column;
+            }
+            .value-name {
+                justify-content: center;
+            }
+            .value-number {
+                display: none; /* Hide big number on mobile for space */
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="page-hero">
-        <div class="container fade-up">
-            <div class="hero-content">
-                <span class="breadcrumb">Who We Are</span>
-                <h1>About Oppty TechHub</h1>
-                <p style="font-size:1.1rem; max-width:600px; margin:0 auto; opacity:0.9;">
-                    Driving digital transformation through innovation, integrity, and excellence.
-                </p>
+    <div class="main-container">
+        
+        <!-- HEADER -->
+        <header class="section-intro reveal-up">
+            <h1 class="headline">Company Overview</h1>
+            <p class="sub-headline">We are dedicated to delivering innovative solutions that drive client success and foster long-term partnerships through integrity and excellence.</p>
+        </header>
+
+        <!-- MISSION & VISION -->
+        <div class="mv-container">
+            <!-- Mission -->
+            <div class="mv-box mission-box reveal-left">
+                <div class="icon-circle"><i class="fas fa-bullseye"></i></div>
+                <h2 class="mv-heading">Our Mission</h2>
+                <p>To deliver innovative solutions that drive client success and foster long-term partnerships through integrity and excellence. We bridge the gap between complex technology and business needs.</p>
+            </div>
+            
+            <!-- Vision -->
+            <div class="mv-box vision-box reveal-right">
+                <div class="icon-circle"><i class="fas fa-binoculars"></i></div>
+                <h2 class="mv-heading">Our Vision</h2>
+                <p>To be a leading global provider of comprehensive business services, recognized for our commitment to collaboration, client-centricity, and sustainable growth.</p>
             </div>
         </div>
-    </header>
 
-    <section class="section-padding container">
-        <div class="intro-grid">
-            <div class="intro-image-wrapper fade-up">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corporate Team" class="intro-img">
-                <div class="floating-badge">
-                    <i class="fa-solid fa-trophy badge-icon"></i>
-                    <div class="badge-text">
-                        <h4>5+ Years</h4>
-                        <span>Of Excellence</span>
-                    </div>
+        <!-- CREATIVE CORE VALUES SECTION -->
+        <div>
+            <h2 class="core-values-title reveal-up">Our Core Values</h2>
+
+            <!-- Value 1: Innovation (Image Left) -->
+            <div class="value-row">
+                <div class="value-visual reveal-left">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Innovation Team" class="value-img">
+                </div>
+                <div class="value-details reveal-right">
+                    <div class="value-number">01</div>
+                    <h3 class="value-name"><i class="fas fa-lightbulb"></i> Innovation</h3>
+                    <p class="value-desc">We don't just adapt to the future; we define it. We embrace change and constantly challenge the status quo to build future-ready solutions for our clients.</p>
                 </div>
             </div>
 
-            <div class="intro-text fade-up">
-                <span class="sub-heading">Executive Summary</span>
-                <h2>Your Partner for Digital Transformation</h2>
-                <p>Oppty TechHub Private Limited is a leading provider of innovative business solutions, delivering cutting-edge IT services, Business Process Outsourcing (BPO), e-commerce solutions, web development, Artificial Intelligence (AI) services, AIOps, and advanced GIS Mapping solutions.</p>
-                
-                <p>With strategic offices in Hyderabad and Udaipur, we don't just act as vendors; we are partners in your growth story. Our commitment to excellence, integrity, and client-centricity ensures long-term partnerships and measurable success.</p>
-
-                <ul class="feature-list">
-                    <li><i class="fa-solid fa-circle-check"></i> End-to-end IT Infrastructure</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Specialized GIS Mapping Teams</li>
-                    <li><i class="fa-solid fa-circle-check"></i> AI & AIOps Implementation</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Custom Web Solutions</li>
-                </ul>
+            <!-- Value 2: Excellence (Image Right) -->
+            <div class="value-row">
+                <div class="value-visual reveal-right">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Excellence in Work" class="value-img">
+                </div>
+                <div class="value-details reveal-left">
+                    <div class="value-number">02</div>
+                    <h3 class="value-name"><i class="fas fa-medal"></i> Excellence</h3>
+                    <p class="value-desc">Mediocrity is not in our vocabulary. We are committed to the highest standards of quality in every line of code we write and every service we provide.</p>
+                </div>
             </div>
+
+            <!-- Value 3: Integrity (Image Left) -->
+            <div class="value-row">
+                <div class="value-visual reveal-left">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Handshake Integrity" class="value-img">
+                </div>
+                <div class="value-details reveal-right">
+                    <div class="value-number">03</div>
+                    <h3 class="value-name"><i class="fas fa-handshake"></i> Integrity</h3>
+                    <p class="value-desc">Trust is our currency. We operate with complete transparency and honesty in all our business dealings, ensuring our partners can rely on us implicitly.</p>
+                </div>
+            </div>
+
+            <!-- Value 4: Client-Centric (Image Right) -->
+            <div class="value-row">
+                <div class="value-visual reveal-right">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Client Meeting" class="value-img">
+                </div>
+                <div class="value-details reveal-left">
+                    <div class="value-number">04</div>
+                    <h3 class="value-name"><i class="fas fa-users"></i> Client-Centric</h3>
+                    <p class="value-desc">Your success is our success. We listen, adapt, and tailor our strategies to meet your unique goals, placing your needs at the heart of everything we do.</p>
+                </div>
+            </div>
+
+             <!-- Value 5: Collaboration (Image Left) -->
+             <div class="value-row">
+                <div class="value-visual reveal-left">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Collaboration" class="value-img">
+                </div>
+                <div class="value-details reveal-right">
+                    <div class="value-number">05</div>
+                    <h3 class="value-name"><i class="fas fa-share-nodes"></i> Collaboration</h3>
+                    <p class="value-desc">We believe in the power of the collective. By leveraging diverse perspectives and working together, we solve complex problems that no individual could solve alone.</p>
+                </div>
+            </div>
+
         </div>
-    </section>
 
-    <div class="bg-light">
-        <section class="section-padding container">
-            <div class="section-header fade-up">
-                <h2 class="section-title">Our Philosophy</h2>
-                <p class="section-desc">Guiding principles that define our purpose and future.</p>
-            </div>
-
-            <div class="mv-grid fade-up">
-                <div class="mv-card mission">
-                    <i class="fa-solid fa-bullseye mv-icon"></i>
-                    <h3>Our Mission</h3>
-                    <p>To deliver innovative solutions that drive client success and foster long-term partnerships through integrity and excellence. We bridge the gap between complex technology and business needs.</p>
-                </div>
-
-                <div class="mv-card vision">
-                    <i class="fa-solid fa-eye mv-icon"></i>
-                    <h3>Our Vision</h3>
-                    <p>To be a leading global provider of comprehensive business services, recognized for our commitment to collaboration, client-centricity, and sustainable growth.</p>
-                </div>
-            </div>
-        </section>
     </div>
 
-    <section class="section-padding container">
-        <div class="section-header fade-up">
-            <h2 class="section-title">Core Values</h2>
-            <p class="section-desc">The pillars that shape our culture and every decision we make.</p>
-        </div>
-
-        <div class="values-grid fade-up">
-            <div class="value-card">
-                <div class="v-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
-                <h4>Innovation</h4>
-                <p>Embracing new technologies and creative thinking to stay ahead of the curve and solve complex challenges.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="v-icon-box"><i class="fa-solid fa-medal"></i></div>
-                <h4>Excellence</h4>
-                <p>Delivering superior quality in every project with precision, dedication, and high international standards.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="v-icon-box"><i class="fa-solid fa-handshake"></i></div>
-                <h4>Integrity</h4>
-                <p>Upholding transparency, honesty, and strong ethical principles in all our dealings and partnerships.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="v-icon-box"><i class="fa-solid fa-users"></i></div>
-                <h4>Client-Centric</h4>
-                <p>Prioritizing our clients' specific needs to ensure their measurable success and satisfaction.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="v-icon-box"><i class="fa-solid fa-people-arrows"></i></div>
-                <h4>Collaboration</h4>
-                <p>Working closely with internal teams and stakeholders to achieve shared goals effectively.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="stats-strip fade-up">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h3>2+</h3>
-                <p>Key Locations</p>
-            </div>
-            <div class="stat-item">
-                <h3>60+</h3>
-                <p>GIS Experts</p>
-            </div>
-            <div class="stat-item">
-                <h3>5+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Client Focus</p>
-            </div>
-        </div>
-    </div>
-
-    <section class="section-padding container">
-        <div class="section-header fade-up">
-            <h2 class="section-title">Why Choose Us?</h2>
-            <p class="section-desc">We combine technical expertise with business acumen.</p>
-        </div>
-
-        <div class="why-layout fade-up">
-            <div class="why-image">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Collaboration" class="why-img">
-            </div>
-
-            <div class="accordion">
-                <div class="acc-item active">
-                    <button class="acc-header">Expertise Across Diverse Domains <i class="fa-solid fa-chevron-down"></i></button>
-                    <div class="acc-body" style="max-height: 100px; padding-bottom: 20px;">
-                        Specialized knowledge across IT, BPO, e-commerce, web development, AI, AIOps, and GIS Mapping enables end‑to‑end solutions aligned to your business goals.
-                    </div>
-                </div>
-
-                <div class="acc-item">
-                    <button class="acc-header">Client-Focused Approach <i class="fa-solid fa-chevron-down"></i></button>
-                    <div class="acc-body">Engagement models built around your objectives, clear communication, and measurable outcomes ensure long‑term partnerships.</div>
-                </div>
-
-                <div class="acc-item">
-                    <button class="acc-header">Innovative Technology Stack <i class="fa-solid fa-chevron-down"></i></button>
-                    <div class="acc-body">Use of modern platforms, tools, and frameworks to deliver scalable, secure, and future‑ready solutions that grow with your business.</div>
-                </div>
-
-                <div class="acc-item">
-                    <button class="acc-header">Cost-Effective Solutions <i class="fa-solid fa-chevron-down"></i></button>
-                    <div class="acc-body">Optimized delivery models and efficient resource allocation help control costs without compromising on quality or deadlines.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="cta-section fade-up">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Join hands with a partner who understands your vision. Contact Oppty TechHub today.</p>
-            <a href="#" class="btn-primary">Get In Touch</a>
-        </div>
-    </div>
-
+    <!-- JAVASCRIPT FOR SCROLL ANIMATIONS -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 1. SCROLL ANIMATIONS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup Intersection Observer
             const observerOptions = {
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
+                root: null,
+                threshold: 0.20, // Trigger when 20% visible
+                rootMargin: "0px"
             };
 
-            const observer = new IntersectionObserver((entries) => {
+            const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Run once
                     }
                 });
-            }, observerOptions);
+            };
 
-            const fadeElements = document.querySelectorAll('.fade-up');
-            fadeElements.forEach(el => observer.observe(el));
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-            // 2. ACCORDION LOGIC
-            const accHeaders = document.querySelectorAll('.acc-header');
-            accHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const item = header.parentElement;
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all other items
-                    document.querySelectorAll('.acc-item').forEach(i => {
-                        i.classList.remove('active');
-                        i.querySelector('.acc-body').style.maxHeight = null;
-                    });
-
-                    // Toggle clicked item
-                    if (!isActive) {
-                        item.classList.add('active');
-                        const body = item.querySelector('.acc-body');
-                        body.style.maxHeight = body.scrollHeight + "px";
-                    }
-                });
-            });
+            // Select elements to animate
+            const elementsToAnimate = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+            elementsToAnimate.forEach(el => observer.observe(el));
         });
     </script>
+
 </body>
 </html>
