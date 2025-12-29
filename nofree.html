@@ -2,30 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Podcasts.com</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
-    <link href="https://fonts.googleapis.com/css?family=Dripicons" rel="stylesheet">
-    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
-    <link href="https://fonts.googleapis.com/css?family=Dripicons" rel="stylesheet">
-    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="perspectives.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpptyBPO.com</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
+    <link href="https://fonts.googleapis.com/css?family=Dripicons" rel="stylesheet">
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="home.js"></script>
 </head>
 
-<body>
-    <!-- header start -->
-   <header>
+<body class="main-body">
+    <div class="first-page-container">
+        <header>
             <div class="header-container">
                 <nav class="navbar"
                     style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
@@ -100,677 +90,1471 @@
                 </div>
             </div>
         </header>
-        <script>
-        //  hamburger
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburger = document.getElementById('customHamburger');
-            const sidebar = document.getElementById('sidebar');
-            document.addEventListener('click', function (e) {
-                if (hamburger.contains(e.target)) {
-                    sidebar.classList.toggle('active');
-                } else if (!sidebar.contains(e.target)) {
-                    sidebar.classList.remove('active');
-                }
-            });
-        });
-    </script>
-    <!-- header end -->
-    <!-- =======================
-         PODCAST BANNER SECTION
-    ======================= -->
-    <section class="podcast-banner-section">
-        <div class="banner-content">
-            <a href="#" class="breadcrumb">
-                <span class="arrow">&#9664;</span> PERSPECTIVES
-            </a>
-            <h1>Podcasts</h1>
-        </div>
-    </section>
-
-    <!-- =======================
-         IMAGE CARD GRID SECTION
-    ======================= -->
-    <section>
-        <div class="card-container">
-            <!-- Row 1 -->
-            <div class="card-row">
-                <!-- Card 1 -->
-                <div class="card">
-                    <img src="assets/image11.jpg" alt="Woman using a self-service kiosk" />
-                    <div class="card-content">
-                        <p class="category">AI; Retail and CPG</p>
-                        <h3 class="title">
-                            How Agentic AI is Powering the Next Era of Retail & CPG Operations
-                        </h3>
-                    </div>
-                    <div class="hover-overlay">
-                        <span>Explore More</span>
-                    </div>
+        <!-- first page -->
+        <div class="first-page-container">
+            <div class="hero-background-section">
+                <div class="background-image-container">
+                    <img src="assets/newbg.png" alt="Hero Background" class="hero-bg-image">
+                    <div class="hero-overlay"></div>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="card">
-                    <img src="assets/image12.jpg" alt="Man using a tablet in a supermarket" />
-                    <div class="card-content">
-                        <p class="category">AI; CPG</p>
-                        <h3 class="title">
-                            GBS in Consumer Goods: From Cost Efficiency to AI-powered Growth
-                        </h3>
-                    </div>
-                    <div class="hover-overlay">
-                        <span>Explore More</span>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card">
-                    <img src="assets/image13.jpg" alt="E-commerce concept with boxes and a shopping cart" />
-                    <div class="card-content">
-                        <p class="category">Consumer Packaged Goods</p>
-                        <h3 class="title">
-                            Accelerating Value in Private Equity-backed CPG & Manufacturing Firms
-                        </h3>
-                    </div>
-                    <div class="hover-overlay">
-                        <span>Explore More</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="card-row">
-                <!-- Card 4 -->
-                <div class="card">
-                    <img src="assets/image14.jpg" alt="Team collaborating on a project" />
-                    <div class="card-content">
-                        <p class="category">Digital Transformation</p>
-                        <h3 class="title">
-                            Unlocking Team Potential with Collaborative Digital Workspaces
-                        </h3>
-                    </div>
-                    <div class="hover-overlay">
-                        <span>Explore More</span>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="card">
-                    <img src="assets/image15.jpg" alt="Data analytics dashboard on a screen" />
-                    <div class="card-content">
-                        <p class="category">Data & Analytics</p>
-                        <h3 class="title">
-                            Leveraging Big Data for Smarter, More Agile Business Decisions
-                        </h3>
-                    </div>
-                    <div class="hover-overlay">
-                        <span>Explore More</span>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="card">
-                    <img src="assets/image16.jpg" alt="Business strategy meeting" />
-                    <div class="card-content">
-                        <p class="category">Corporate Strategy</p>
-                        <h3 class="title">
-                            Future-Proofing Your Enterprise with Strategic Growth Initiatives
-                        </h3>
-                    </div>
-                    <div class="hover-overlay">
-                        <span>Explore More</span>
-                    </div>
+                <div class="hero-content">
+                    <h6 class="hero-subtitle">We Are Expert In This Field</h6>
+                    <h1 class="hero-title">Leading BPO Company in India for Call Center & Outsourcing Services</h1>
+                    <p class="hero-text">
+                        Oppty BPO Services Pvt Ltd aims to provide affordable and reliable business outsourcing
+                        services
+                        to industries from all sectors. Businesses bloom when some of the business tasks are delegated
+                        to
+                        a trustworthy source, like, Oppty BPO.
+                    </p>
+                    <button class="hero-read-more-btn" id="heroReadMoreBtn">
+                        Read More
+                        <span class="hero-arrow">
+                            <i class="fa fa-arrow-up"></i>
+                        </span>
+                    </button>
+                    <script>
+                        var btn = document.getElementById('heroReadMoreBtn');
+                        if (btn) {
+                            btn.addEventListener('click', function () {
+                                // Replace with your desired action, e.g. scroll or open a section
+                                window.location.href = 'about-us.html';
+                            });
+                        }
+                    </script>
                 </div>
             </div>
         </div>
-    </section>
-    <!--+ AND - Section-->
-    <section class="ecosystem-section">
-        <div class="container">
-            <header class="section-header">
-                <h2>Powered by Oppty's<br><span class="highlight">Intelligent Framework</span></h2>
-                <p style="color: #121212;">At the core of every solution we deliver is a unified intelligence framework – where advanced AI,
-                    deep domain expertise, and human ingenuity converge to create business operations that are not only
-                    smarter but designed to evolve.</p>
-            </header>
-
-            <div class="accordion-grid">
-                <!-- Column 1 -->
-                <div class="accordion-column">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Customer Experience (CX) Design</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>We craft seamless and intuitive customer journeys that build loyalty and drive growth,
-                                leveraging data-driven insights to exceed expectations at every touchpoint.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Data & Analytics</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Transform raw data into actionable intelligence. Our analytics services provide
-                                predictive insights to help you make smarter, faster, and more confident business
-                                decisions.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">AI & Automation</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>We integrate intelligent automation and AI into your core processes to enhance
-                                efficiency, reduce operational costs, and unlock new levels of productivity.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Market Research & Insights</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Stay ahead of the curve with our comprehensive market research services. We provide the
-                                critical intelligence you need to understand trends, competitors, and customer behavior.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Finance & Accounting</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Optimize your financial operations with our end-to-end F&A services. From procure-to-pay
-                                to record-to-report, we ensure accuracy, compliance, and strategic financial management.
-                            </p>
+        <!-- Scroll Down Button -->
+        <div class="scroll-down-container">
+            <button id="scrollDownBtn" aria-label="Scroll Down">
+                <i class="fa fa-arrow-down" style="font-size: 0.5rem; color: white;"></i>
+            </button>
+            <div class="scroll-down-text">Scroll Down</div>
+        </div>
+    </div>
+    <!-- second page -->
+    <div class="second-page-container">
+        <div class="image-section">
+            <img src="assets/Teaching image.webp" alt="Descriptive Alt Text" class="background-image">
+            <div class="overlay"></div>
+            <h1 class="text-on-img">Empower <br> Your Career Journey</h1>
+        </div>
+        <div class="taglines">
+            <p class="tagline1">Your competition is not your competition,
+                it is the Future.</p>
+            <p class="tagline2">At ProCareer, we connect students with top companies through innovative
+                training programs and placement drives. Our mission is to bridge the gap
+                between education and employment, ensuring every student has the tools to succeed.</p>
+        </div>
+        <div style="display: flex; gap: 600px; align-items: center;">
+            <div class="hero-links1">
+                <p>
+                    Make Your Business Smarter Today
+                    <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f97216;"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="hero-links2">
+                <p>
+                    Make Your Business Smarter Today
+                    <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f97216;"></i>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="future-section" style="position: relative; overflow: hidden;height: 650px;">
+            <video class="future-bg-video" autoplay loop muted playsinline
+                style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+                <source src="https://s3.wns.com/S3_5/Images/WNS-Home/glow-bg-speed.mp4" type="video/mp4">
+            </video>
+            <div style="position: relative; z-index: 1; padding: 2rem; color: white; text-align: center;">
+                <h1 class="future-heading">Shaping the Future with AI at the Core</h1>
+            </div>
+            <div class="image-row">
+                <!-- first image -->
+                <div class="image-item">
+                    <img src="assets/oppty-img1.svg" alt="Image 1">
+                    <div class="image-text hover-move-up">
+                        <p>Empower Your Future with ProCareer Workshops</p>
+                        <div class="read-more-container">
+                            <span class="read-more-text" style="color: #f76e11">Read More</span>
+                            <span class="read-more-arrow" style="color: #f76e11; margin-left: 5px;">
+                                <i class="fa fa-arrow-up" style="transform: rotate(45deg);"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Column 2 -->
-                <div class="accordion-column">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Digital Transformation</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Partner with us to navigate your digital journey. We help you modernize legacy systems,
-                                adopt cloud-native solutions, and build a resilient digital foundation for the future.
-                            </p>
+                <!-- second image -->
+                <div class="image-item">
+                    <img src="assets/oppty-img2.svg" alt="Image 2">
+                    <div class="image-text hover-move-up">
+                        <p>Empowering Colleges Through Strategic Partnerships</p>
+                        <div class="read-more-container">
+                            <span class="read-more-text" style="color: #f76e11">Read More</span>
+                            <span class="read-more-arrow" style="color: #f76e11; margin-left: 5px;">
+                                <i class="fa fa-arrow-up" style="transform: rotate(45deg);"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Sales & Revenue Operations (RevOps)</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Align your sales, marketing, and service teams to maximize revenue. Our RevOps solutions
-                                streamline processes, improve data flow, and create a predictable engine for growth.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Customer Engagement Solutions</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Our omnichannel contact center solutions empower you to deliver personalized and
-                                effective support, turning every customer interaction into an opportunity.</p>
+                </div>
+                <!-- third image -->
+                <div class="image-item">
+                    <img src="assets/oppty-img3.svg" alt="Image 3">
+                    <div class="image-text hover-move-up">
+                        <p>Empower Your Future with ProCareer Workshops</p>
+                        <div class="read-more-container">
+                            <span class="read-more-text" style="color: #f76e11">Read More</span>
+                            <span class="read-more-arrow" style="color: #f76e11; margin-left: 5px;">
+                                <i class="fa fa-arrow-up" style="transform: rotate(45deg);"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-title">Procurement & Supply Chain</span>
-                            <button class="accordion-toggle" aria-expanded="false">+</button>
+                </div>
+                <!-- fourth image -->
+                <div class="image-item">
+                    <img src="assets/oppty-img4.svg" alt="Image 4">
+                    <div class="image-text hover-move-up">
+                        <p>Connecting Talent with Opportunities</p>
+                        <div class="read-more-container">
+                            <span class="read-more-text" style="color: #f76e11">Read More</span>
+                            <span class="read-more-arrow" style="color: #f76e11; margin-left: 5px;">
+                                <i class="fa fa-arrow-up" style="transform: rotate(45deg);"></i>
+                            </span>
                         </div>
-                        <div class="accordion-content">
-                            <p>Build a more agile and cost-effective supply chain. We optimize your procurement
-                                processes, manage vendor relationships, and enhance visibility from end to end.</p>
+                    </div>
+                </div>
+                <!-- fifth image -->
+                <div class="image-item">
+                    <img src="assets/oppty-img1.svg" alt="Image 1"
+                        onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                    <div class="image-text hover-move-up">
+                        <p>Building Strong College Partnerships</p>
+                        <div class="read-more-container">
+                            <span class="read-more-text" style="color: #f76e11;text-align: left;">Read More</span>
+                            <span class="read-more-arrow" style="color: #f76e11; margin-left: 5px;">
+                                <i class="fa fa-arrow-up" style="transform: rotate(45deg);"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- View All Button -->
+            <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;">
+                <p class="view-all-text" style="cursor:pointer;">
+                    View All
+                    <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                    </span>
+                </p>
+            </div>
         </div>
-    </section>
-
-    <!---case study sldier-->
-    <!-- <section class="case-studies-section">
-        <div class="container">
-            <header class="section-header">
-                <h2>
-                    Smarter by Design & Execution.
-                    <br>
-                    <span class="highlight">Proven by Outcomes.</span>
-                </h2>
-                <a href="#" class="case-studies-link">
+    </div>
+    <!-- third column -->
+    <div class="third-page-container">
+        <div class="third-page-content">
+            <p class="shape-text">Own the Future on Your Terms</p>
+            <h2 class="shape-heading">Shape it Your Way</h2>
+        </div>
+        <!-- images   -->
+        <div class="custom-image-row">
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/31-Banking.jpg" alt="Image 1">
+                <div class="custom-image-text">
+                    Banking & Financial Services
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/32-Banking.jpg" alt="Image 2">
+                <div class="custom-image-text">
+                    Energy & Utilities
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/33-Banking.jpg" alt="Image 3">
+                <div class="custom-image-text">
+                    Healthcare
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/34-Banking.jpg" alt="Image 4">
+                <div class="custom-image-text">
+                    Hi-Tech and Professional Services
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/35-Banking.jpg" alt="Image 5">
+                <div class="custom-image-text">
+                    Insurance
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- second row -->
+        <div class="custom-image-row" style="margin: 5px 0;">
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/36-Banking.jpg" alt="Image 6">
+                <div class="custom-image-text">
+                    Life Sciences
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/37-Banking.jpg" alt="Image 7">
+                <div class="custom-image-text">
+                    Manufacturing
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/38-Banking.jpg" alt="Image 8">
+                <div class="custom-image-text">
+                    Retail & Consumer Packaged Goods
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/39-Banking.jpg" alt="Image 9">
+                <div class="custom-image-text">
+                    Shipping & Logistics
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="custom-image-item custom-image-hover-arrow">
+                <img src="assets/310-Banking.jpg" alt="Image 10">
+                <div class="custom-image-text">
+                    Travel & Leisure
+                    <span class="hover-arrow" style="display: none; margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fourth page -->
+    <div class="fourth-page-container">
+        <div class="fourth-page-content-container">
+            <p class="shape-text">Outsmarting the Future is All About</p>
+            <h2 class="shape-heading">Combining Domain Excellence with Continuous <br> Innovation</h2>
+        </div>
+        <!-- adding images-->
+        <div class="hover-image-row">
+            <div class="hover-image-item">
+                <img src="assets/41-img.jpg" alt="Image-1" />
+                <div class="hover-image-heading">Agentic AI</div>
+                <div class="hover-image-overlay">
+                    <div class="hover-image-overlay-text">
+                        Our workshops are tailored to equip students with the skills needed to excel
+                        in interviews and secure their dream jobs. We focus on practical, hands-on training.
+                    </div>
+                    <div class="hover-image-read-more">
+                        Read More
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hover-image-item">
+                <img src="assets/42-img.png" alt="Image 2" />
+                <div class="hover-image-heading">Analytics</div>
+                <div class="hover-image-overlay">
+                    <div class="hover-image-overlay-text">
+                        Our campus placement drives offer students the chance to meet potential employers and secure
+                        job offers directly on campus, enhancing their career prospects.
+                    </div>
+                    <div class="hover-image-read-more">
+                        Read More
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hover-image-item">
+                <img src="assets/43-img.png" alt="Image-3" />
+                <div class="hover-image-heading">Data</div>
+                <div class="hover-image-overlay">
+                    <div class="hover-image-overlay-text">
+                        We collaborate with colleges to enhance their reputation and improve student outcomes through
+                        strategic partnerships and tailored programs.
+                    </div>
+                    <div class="hover-image-read-more">
+                        Read More
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hover-image-item">
+                <img src="assets/44-img.png" alt="Image-4" />
+                <div class="hover-image-heading">Design Hub</div>
+                <div class="hover-image-overlay">
+                    <div class="hover-image-overlay-text">
+                        We collaborate with colleges to enhance their reputation and improve student outcomes through
+                        strategic partnerships and tailored programs.
+                    </div>
+                    <div class="hover-image-read-more">
+                        Read More
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hover-image-item">
+                <img src="assets/45-img.png" alt="Image-5" />
+                <div class="hover-image-heading">Hyperautomation</div>
+                <div class="hover-image-overlay">
+                    <div class="hover-image-overlay-text">
+                        Our workshops are tailored to equip students with the skills needed to excel
+                        in interviews and secure their dream jobs. We focus on practical, hands-on training.
+                    </div>
+                    <div class="hover-image-read-more">
+                        Read More
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fifth-page-container">
+        <div class="fifth-page-content-container">
+            <h2 class="smart-heading1">Smarter by Design</h2>
+            <h2 class="smart-heading2">Innovation Meets Execution</h2>
+            <div class="view-all"
+                style="transition: transform 0.3s; position: absolute; z-index: 2;text-align: left;margin-top: 60px;">
+                <p class="view-all-text" style="cursor:pointer;color: black;margin-top: 50px">
                     Case Studies
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true">
-                        <path d="M1.16663 12.8333L12.8333 1.16663M12.8333 1.16663H3.49996M12.8333 1.16663V10.5"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </header>
-
-            <div class="slider-container">
-                <div class="slider-viewport">
-                    <div class="slider-track" style="display: flex; flex-wrap: nowrap; gap: 20px;"> -->
-                        <!-- Slide 1 -->
-                        <!-- <div class="slide" style="flex: 0 0 calc(25% - 15px); min-width: 250px;">
-                            <img src="assets/case study slider1.jpg" alt="Scientists collaborating with a tablet">
-                            <p class="caption">Evaluate & WNS: Co-Creating Domain-led Datasets for Pharma Research</p>
-                        </div> -->
-                        <!-- Slide 2 -->
-                        <!-- <div class="slide" style="flex: 0 0 calc(25% - 15px); min-width: 250px;">
-                            <img src="assets/case study slider2.jpg"
-                                alt="Person interacting with a futuristic digital interface">
-                            <p class="caption">ALM Media Harnesses Intelligent Automation to Streamline Publishing
-                                Workflow</p>
-                        </div> -->
-                        <!-- Slide 3 -->
-                        <!-- <div class="slide">
-                            <img src="assets/case study slider3.jpg" alt="Team collaborating in a modern office">
-                            <p class="caption">Boosting Sales Productivity for a Global Tech Firm with AI-Powered
-                                Insights</p>
-                        </div> -->
-                        <!-- Slide 4 -->
-                        <!-- <div class="slide">
-                            <img src="assets/case study slider4.jpg" alt="Advanced robotics in a clean-room facility">
-                            <p class="caption">Manufacturing Giant Reduces Downtime with Predictive Maintenance</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slider-controls">
-                <div class="progress-bar-container">
-                    <div class="progress-bar-fill"></div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="prev-btn" aria-label="Previous Slide">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
-                        </svg>
-                    </button>
-                    <button id="next-btn" aria-label="Next Slide">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </section> -->
-    <!-- siidu sections starts here -->
-    <section class="image-slider-section">
-        <div class="container">
-            <h2 class="slider-heading">Smarter by Design & Execution</h2>
-            <div class="image-slider-container">
-                <div class="slider-wrapper">
-                    <div class="image-track" id="imageTrack">
-                        <div class="image-slide">
-                            <img src="assets/case study slider1.jpg" alt="AI Solutions" />
-                            <div class="slide-content">
-                                <h3>AI Solutions</h3>
-                                <p>Evaluate & OPPTY: Co-creating Domain-led Datasets for AI research</p>
-                            </div>
-                        </div>
-                        <div class="image-slide">
-                            <img src="assets/case study slider2.jpg" alt="Data Analytics" />
-                            <div class="slide-content">
-                                <h3>Data Analytics</h3>
-                                <p>ALM Media Harnesses Intelligent Automation to Streamline Publishing Workflow</p>
-                            </div>
-                        </div>
-                        <div class="image-slide">
-                            <img src="assets/case study slider3.jpg" alt="Digital Transformation" />
-                            <div class="slide-content">
-                                <h3>Digital Transformation</h3>
-                                <p>Boosting Sales Productivity for a Global Tech Firm with AI-Powered Insights</p>
-                            </div>
-                        </div>
-                        <div class="image-slide">
-                            <img src="assets/case study slider4.jpg" alt="Customer Experience" />
-                            <div class="slide-content">
-                                <h3>Customer Experience</h3>
-                                <p>Agentic AI in Retail: Unlocking Autonomous Innovation Across the Value Chain</p>
-                            </div>
-                        </div>
-                        <div class="image-slide">
-                            <img src="assets/news4.jpg" alt="Cloud Services" />
-                            <div class="slide-content">
-                                <h3>Cloud Services</h3>
-                                <p>Scale your infrastructure efficiently</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <button class="slider-btn prev-btn" id="prevBtn">
-                        <svg width="20" height="20" viewBox="0 0 20 20">
-                            <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="slider-btn next-btn" id="nextBtn">
-                        <svg width="20" height="20" viewBox="0 0 20 20">
-                            <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
+                    <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                        <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                    </span>
+                </p>
             </div>
         </div>
-    </section>
+        <!-- first slider for smarter by design-->
+        <div class="swiper-container" style="min-height: 400px;">
+            <div class="swiper-slider" style="min-height: 350px;">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
 
-    <style>
-    .image-slider-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    }
+                            British Gas &amp; OPPTY: 15 Years of Innovation and Excellence
 
-    .slider-heading {
-        text-align: center;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #2c3e50;
-        margin-bottom: 3rem;
-    }
+                        </h3>
+                        <p class="swiper-text">
 
-    .image-slider-container {
-        position: relative;
-        max-width: 1400px;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
+                            Jess Johnson, Head of Operational Excellence at British Gas, shares how OPPTY’s expertise in
+                            energy
+                            utilities and innovation helped drive high service levels, improve NPS and ensure continuity
+                            even through turbulence.
 
-    .slider-wrapper {
-        position: relative;
-        height: 450px;
-        overflow: hidden;
-    }
-
-    .image-track {
-        display: flex;
-        transition: transform 0.6s ease-in-out;
-        height: 100%;
-        width: 500%;
-    }
-
-    .image-slide {
-        flex: 0 0 20%;
-        position: relative;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        overflow: hidden;
-    }
-
-    .image-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .image-slide:hover img {
-        transform: scale(1.1);
-    }
-
-    .slide-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-        color: white;
-        padding: 2rem 1rem 1rem;
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
-    }
-
-    .image-slide:hover .slide-content {
-        transform: translateY(0);
-    }
-
-    .slide-content h3 {
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-
-    .slide-content p {
-        font-size: 1rem;
-        opacity: 0.9;
-        margin: 0;
-    }
-
-    .slider-controls {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
-        pointer-events: none;
-    }
-
-    .slider-btn {
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        pointer-events: all;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        z-index: 10;
-    }
-
-    .slider-btn:hover {
-        background: white;
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .slider-btn:active {
-        transform: scale(0.95);
-    }
-
-    .slider-btn svg {
-        color: #2c3e50;
-        width: 24px;
-        height: 24px;
-    }
-
-    @media (max-width: 1024px) {
-        .image-slider-container {
-            max-width: 1000px;
-        }
-        
-        .slider-wrapper {
-            height: 400px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .image-track {
-            width: 500%;
-        }
-        
-        .image-slide {
-            flex: 0 0 20%;
-        }
-        
-        .slider-heading {
-            font-size: 2rem;
-        }
-        
-        .slider-wrapper {
-            height: 300px;
-        }
-        
-        .slider-btn {
-            width: 50px;
-            height: 50px;
-        }
-        
-        .slider-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .image-slider-container {
-            margin: 0 10px;
-        }
-        
-        .slider-controls {
-            padding: 0 10px;
-        }
-    }
-    </style>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const imageTrack = document.getElementById('imageTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const slides = document.querySelectorAll('.image-slide');
-        
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-        
-        function updateSlider() {
-            const translateX = -currentIndex * 20; // 20% per slide
-            imageTrack.style.transform = `translateX(${translateX}%)`;
-        }
-        
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlider();
-        }
-        
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        }
-        
-        // Event listeners for buttons
-        nextBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            nextSlide();
-        });
-        
-        prevBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            prevSlide();
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') {
-                prevSlide();
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-            }
-        });
-        
-        // Auto-play functionality (optional - remove if not needed)
-        let autoPlayInterval = setInterval(nextSlide, 5000);
-        
-        // Pause auto-play on hover
-        const sliderContainer = document.querySelector('.image-slider-container');
-        sliderContainer.addEventListener('mouseenter', function() {
-            clearInterval(autoPlayInterval);
-        });
-        
-        sliderContainer.addEventListener('mouseleave', function() {
-            autoPlayInterval = setInterval(nextSlide, 5000);
-        });
-        
-        // Initialize
-        updateSlider();
-    });
-    </script>
-     <!-- siidu sections ends here -->
-    <!-- new section starts here -->
-      <section class="interactive-3d-section">
-        <div class="container">
-            <header class="section-header">
-                <h2 style="color: #f97216;">Explore the Oppty BPO Advantage</h2>
-                <p>We combine human ingenuity with cutting-edge technology to deliver business process solutions that are not just efficient, but transformative.</p>
-            </header>
-
-            <div class="card-grid">
-                <!-- Card 1: Data & Analytics Services with Video -->
-                <div class="card-container">
-                    <div class="card">
-                        <div class="card-content">
-                            <video class="card-bg" autoplay loop muted playsinline>
-                                <source src="assets/data analyst.mp4" type="video/mp4">
-                                
-                            </video>
-                            <div class="card-glare"></div>
-                            <div class="card-text">
-                                <h3 class="card-title">Data & Analytics Services</h3>
-                                <p class="card-body">Harness the power of your data. We transform raw information into strategic assets, driving predictive insights and business growth.</p>
-                                <a href="#" class="card-link">Discover Analytics</a>
-                            </div>
-                        </div>
+                        </p>
+                    </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
                     </div>
                 </div>
-
-                <!-- Card 2: Intelligent Automation with Video -->
-                <div class="card-container">
-                    <div class="card">
-                        <div class="card-content">
-                            <video class="card-bg" autoplay loop muted playsinline>
-                                <source src="assets/intellegent automation.mp4" type="video/mp4">
-                                
-                            </video>
-                            <div class="card-glare"></div>
-                            <div class="card-text">
-                                <h3 class="card-title">Intelligent Automation</h3>
-                                <p class="card-body">Implement cutting-edge AI and robotic process automation (RPA) to enhance efficiency, reduce costs, and future-proof your operations.</p>
-                                <a href="#" class="card-link">Explore AI Solutions</a>
-                            </div>
-                        </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img1.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- second slider -->
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+                            Co-creating Smarter Airline Claims with AI to Detect $6.3M in Fraud
+                        </h3>
+                        <p class="swiper-text">
+                            OPPTY collaborated with a leading European airline to embed AI-driven fraud analytics into
+                            its
+                            customer claims management process. The solution enabled real-time fraud scoring, faster
+                            resolution
+                            of genuine claims and enhanced customer experience.
+                        </p>
+                    </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
                     </div>
                 </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img2.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- third slide -->
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
 
-                <!-- Card 3: Customer Experience (CX) with Video -->
-                <div class="card-container">
-                    <div class="card">
-                        <div class="card-content">
-                            <video class="card-bg" autoplay loop muted playsinline>
-                                <source src="assets/CX.mp4" type="video/mp4">
-                            </video>
-                            <div class="card-glare"></div>
-                            <div class="card-text">
-                                <h3 class="card-title">Customer Experience (CX)</h3>
-                                <p class="card-body">Elevate your customer interactions. We design and manage omnichannel support solutions that build brand loyalty and increase satisfaction.</p>
-                                <a href="#" class="card-link">See CX Services</a>
-                            </div>
-                        </div>
+                            How Virgin Atlantic Achieved Overall Chargeback Win Rates of 54% with OPPTY
+
+                        </h3>
+                        <p class="swiper-text">
+
+                            Discover how Virgin Atlantic transformed its chargeback process and slashed revenue losses
+                            by
+                            partnering with OPPTY. Hear from Angela Maguire, Manager - Agency, Refunds and Chargebacks,
+                            as
+                            she
+                            shares how digital process mapping, workflow optimization and seamless system integration
+                            led to
+                            a 60% win rate with Worldpay—far above industry standards.
+
+                        </p>
                     </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img3.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- fourth slide -->
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+
+                            Empowering Insurance Innovation: Mosaic Insurance’s Strategic Collaboration with OPPTY
+
+                        </h3>
+                        <p class="swiper-text">
+
+                            Explore how OPPTY drives business transformation through digital innovation, domain
+                            expertise,
+                            and
+                            data-driven strategies to deliver impactful outcomes for global clients.
+
+                        </p>
+                    </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img4.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- fifth slide -->
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+
+                            Co-creating Smarter Digital Ad Onboarding with AI to Unlock $70M+ in Revenue
+
+                        </h3>
+                        <p class="swiper-text">
+
+                            OPPTY collaborated with a global digital advertising platform to streamline advertiser
+                            onboarding, improve conversion outcomes and reduce acquisition costs. By deploying AI-led
+                            prioritization, intelligent scheduling and smarter communication workflows, the engagement
+                            delivered measurable business impact.
+
+                        </p>
+                    </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img5.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- Slider Controls and Progress Bar -->
+            <div class="swiper-controls-container"
+                style="display: flex; align-items: center; justify-content: space-between; margin: 150px 50px 0 50px;">
+                <div class="swiper-progress-bar"
+                    style="flex:1; height: 6px; background: #e0e0e0; border-radius: 3px; margin-right: 16px; overflow: hidden;">
+                    <div class="swiper-progress-inner" id="swiperProgress"
+                        style="height: 100%; width: 0%; background: linear-gradient(90deg, #f76e11 60%, #f97216 100%); border-radius: 3px; transition: width 0.4s cubic-bezier(.4, 1.3, .5, 1);">
+                    </div>
+                </div>
+                <div class="swiper-controls" style="display: flex; gap: 8px;">
+                    <button id="swiperPrev" aria-label="Previous"
+                        style="background: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <button id="swiperNext" aria-label="Next"
+                        style="background: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const sliders = document.querySelectorAll('.swiper-slider');
+                    const progress = document.getElementById('swiperProgress');
+                    const prevBtn = document.getElementById('swiperPrev');
+                    const nextBtn = document.getElementById('swiperNext');
+
+                    // Check if elements exist before proceeding
+                    if (!sliders.length || !progress || !prevBtn || !nextBtn) {
+                        console.error('Swiper elements not found');
+                        return;
+                    }
+
+                    let current = 0;
+                    const total = sliders.length;
+
+                    function updateSlider() {
+                        // Hide all sliders first
+                        sliders.forEach((el, idx) => {
+                            if (idx === current) {
+                                el.style.display = 'flex';
+                                el.style.opacity = '0';
+                                // Fade in animation
+                                setTimeout(() => {
+                                    el.style.transition = 'opacity 0.5s ease-in-out';
+                                    el.style.opacity = '1';
+                                }, 10);
+                            } else {
+                                el.style.display = 'none';
+                                el.style.opacity = '0';
+                            }
+                        });
+
+                        // Update progress bar with animation
+                        const percent = total <= 1 ? 100 : (current / (total - 1)) * 100;
+                        progress.style.width = percent + '%';
+                    }
+
+                    prevBtn.addEventListener('click', function () {
+                        current = (current - 1 + total) % total;
+                        updateSlider();
+                    });
+
+                    nextBtn.addEventListener('click', function () {
+                        current = (current + 1) % total;
+                        updateSlider();
+                    });
+
+                    // Initialize the slider
+                    updateSlider();
+                });
+            </script>
+        </div>
+        <!-- companies scrolling -->
+        <div class="partnerships-companies-scrolling" style="margin-top: 10px;">
+            <div class="business-heading">
+                <h2 class="smartBusiness-heading">Partnerships That Power Smarter Businesses</h2>
+            </div>
+            <div class="companies-list-container" style="margin-top: 10px;">
+                <div class="companies-slider">
+                    <div class="companies-track" id="companiesTrack">
+                        <a href="https://www.ibm.com/in-en" target="_blank" class="company-icon" title="ibm">
+                            <img src="assets/61-ibm.png" alt="ibm" />
+                        </a>
+                        <a href="https://www.uniphore.com/" target="_blank" class="company-icon" title="uniphore">
+                            <img src="assets/62-uni.png" alt="uniphore" />
+                        </a>
+                        <a href="https://www.blackline.com/" target="_blank" class="company-icon" title="blackline">
+                            <img src="assets/63-blackline.png" alt="blackline" />
+                        </a>
+                        <a href="https://www.microsoft.com/en-in/" target="_blank" class="company-icon"
+                            title="microsoft">
+                            <img src="assets/64-miscrosoft.png" alt="microsoft" />
+                        </a>
+                        <a href="https://www.pega.com/" target="_blank" class="company-icon" title="pega">
+                            <img src="assets/65-pega.png" alt="pega" />
+                        </a>
+                        <a href="https://www.zohocorp.com/" target="_blank" class="company-icon" title="zoho">
+                            <img src="assets/66-zoho.png" alt="zoho" />
+                        </a>
+                        <a href="https://www.uipath.com/" target="_blank" class="company-icon" title="uiPath">
+                            <img src="assets/67-uiPath.png" alt="uiPath" />
+                        </a>
+                        <a href="https://www.ibm.com/in-en" target="_blank" class="company-icon" title="ibm">
+                            <img src="assets/68-workfusion.png" alt="ibm" />
+                        </a>
+                        <a href="https://appian.com/" target="_blank" class="company-icon" title="appian">
+                            <img src="assets/69-appian.png" alt="appian" />
+                        </a>
+                        <a href="https://www.blueprism.com/" target="_blank" class="company-icon" title="ssc">
+                            <img src="assets/610-ssc.png" alt="ssc" />
+                        </a>
+                        <a href="https://algonox.com/index" target="_blank" class="company-icon" title="igonox">
+                            <img src="assets/611-igonox.png" alt="igonox" />
+                        </a>
+                        <a href="https://www.logmein.com/" target="_blank" class="company-icon" title="logMeln">
+                            <img src="assets/612-logMeln.png" alt="logMeln" />
+                        </a>
+                        <a href="https://tradeshift.com/" target="_blank" class="company-icon" title="tradeshift">
+                            <img src="assets/613-tradeshift.png" alt="tradeshift" />
+                        </a>
+                        <a href="https://www.nice.com/" target="_blank" class="company-icon" title="nice">
+                            <img src="assets/614-nice.png" alt="nice" />
+                        </a>
+                    </div>
+                </div>
+                <script>
+                    (function () {
+                        const track = document.getElementById('companiesTrack');
+                        const slider = track.parentElement;
+                        let speed = 1; // px per frame
+                        let pos = 0;
+                        let trackWidth = track.scrollWidth / 2;
+
+                        function animate() {
+                            pos += speed;
+                            if (pos >= trackWidth) {
+                                pos = 0;
+                            }
+                            track.style.transform = `translateX(-${pos}px)`;
+                            requestAnimationFrame(animate);
+                        }
+
+                        // Pause on hover
+                        slider.addEventListener('mouseenter', () => speed = 0);
+                        slider.addEventListener('mouseleave', () => speed = 1);
+
+                        // Clicks handled by <a> tags (default behavior)
+                        animate();
+                    })();
+                </script>
+            </div>
+        </div>
+        <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;margin-bottom: 50px;">
+            <p class="view-all-text-partner-hover">
+                View Our Global Partner Network
+                <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                    <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                </span>
+            </p>
+        </div>
+    </div>
+    <!-- sixth page -->
+    <div class="sixth-page-container">
+        <div class="news-content">
+            <h2 class="news-heading">In the News</h2>
+            <div class="explore-more-container" style="margin-top: 30px; text-align: left;">
+                <span id="exploreMoreText"
+                    style="cursor:pointer; color: white; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center;">
+                    Explore More
+                    <span id="exploreMoreArrow"
+                        style="display: inline-block; margin-left: 8px; transition: transform 0.2s;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <script>
+            document.getElementById('exploreMoreText').addEventListener('click', function () {
+                alert('Explore More clicked!');
+            });
+        </script>
+
+        <!-- paragraph slider -->
+        <div class="custom-slider-container">
+            <div class="custom-slider-row" id="customSliderRow">
+                <div class="custom-slider-col">
+                    <h5>OPPTY CEO Prince on 2025 Growth</h5>
+                </div>
+                <div class="custom-slider-col">
+                    <h5>
+                        OPPTY Extends Strategic Engagement with Canopius
+                    </h5>
+                </div>
+                <div class="custom-slider-col">
+                    <h5>
+                        How Digital Transformation is Empowering Pepsico's Procurement?
+                    </h5>
+                </div>
+                <div class="custom-slider-col">
+                    <h5>
+                        OPPTY Acquires Kipi.ai to Expand Data, Analytics and AI Capabilities
+                    </h5>
+                </div>
+                <div class="custom-slider-col">
+                    <h5>
+                        OPPTY Announces Fiscal 2026 First Quarter Earnings
+                    </h5>
+                </div>
+                <div class="custom-slider-col">
+                    <h5>
+                        Capgemini to Acquire OPPTY to Create a Global Leader in Agentic AI-powered Intelligent
+                        Operations
+                    </h5>
+                </div>
+                <div class="custom-slider-col">
+                    <h5>
+                        How OPPTY Procurement Delivers Transformation for Merck KGaA, Darmstadt, Germany
+                    </h5>
+                </div>
+                <div class="custom-slider-col">
+                    <h5>
+                        Rise Of Global Capability Centers Reinforces That Global CEOs Are Comfortable With India
+                    </h5>
+                </div>
+            </div>
+            <div class="slider-controls-container" style="text-align: right; margin-top: 10px;width:110%;">
+                <div class="custom-slider-progress-bar">
+                    <div class="custom-slider-progress-inner" id="customSliderProgress"></div>
+                </div>
+                <div class="custom-slider-controls">
+                    <button id="customSliderPrev" aria-label="Previous" class="custom-slider-btn">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <button id="customSliderNext" aria-label="Next" class="custom-slider-btn">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
-<!-- new section ends here -->
+
+        <script>
+            (function () {
+                const row = document.getElementById('customSliderRow');
+                const progress = document.getElementById('customSliderProgress');
+                const prevBtn = document.getElementById('customSliderPrev');
+                const nextBtn = document.getElementById('customSliderNext');
+                const colCount = row.children.length;
+                let visibleCols = 4;
+                let currentIndex = 0;
+
+                function updateVisibleCols() {
+                    // Calculate how many columns fit in the container
+                    const container = row.parentElement;
+                    const col = row.children[0];
+                    if (!col) return;
+                    const colStyle = window.getComputedStyle(col);
+                    const colWidth = col.offsetWidth + parseInt(colStyle.marginRight || 24, 10);
+                    visibleCols = Math.floor(container.offsetWidth / colWidth);
+                    if (visibleCols < 1) visibleCols = 1;
+                }
+
+                function updateSlider() {
+                    const col = row.children[0];
+                    if (!col) return;
+                    const colStyle = window.getComputedStyle(col);
+                    const colWidth = col.offsetWidth + parseInt(colStyle.marginRight || 24, 10);
+                    const maxIndex = Math.max(0, colCount - visibleCols);
+                    if (currentIndex > maxIndex) currentIndex = maxIndex;
+                    if (currentIndex < 0) currentIndex = 0;
+                    row.style.transform = `translateX(-${currentIndex * colWidth}px)`;
+                    // Progress bar
+                    const progressPercent = maxIndex === 0 ? 100 : ((currentIndex) / maxIndex) * 100;
+                    progress.style.width = `${progressPercent}%`;
+                }
+
+                prevBtn.addEventListener('click', function () {
+                    currentIndex--;
+                    updateSlider();
+                });
+                nextBtn.addEventListener('click', function () {
+                    currentIndex++;
+                    updateSlider();
+                });
+
+                window.addEventListener('resize', function () {
+                    updateVisibleCols();
+                    updateSlider();
+                });
+
+                // Init after DOM is ready and images/fonts loaded
+                window.addEventListener('load', function () {
+                    updateVisibleCols();
+                    updateSlider();
+                });
+            })();
+        </script>
+        <!-- AI Powered. -->
+        <div class="ai-powered">
+            <div class="human-content">
+                <div class="human-heading">
+                    <h2>AI Powered.
+                        Human Led.
+                        Future Ready.</h2>
+                </div>
+                <div class="human-text">
+                    <p>At OPPTY, we combine AI with human ingenuity to
+                        co-create smarter businesses.</p>
+                </div>
+                <div class="explore-more-container" style="margin-top: 230px; text-align: left;">
+                    <span id="exploreMoreText"
+                        style="cursor:pointer; color: white; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center;">
+                        Read More
+                        <span id="exploreMoreArrow"
+                            style="display: inline-block; margin-left: 8px; transition: transform 0.2s;">
+                            <i class="fa fa-arrow-up" aria-hidden="true"
+                                style="color: #f76e11; transform: rotate(45deg);"></i>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <!-- text-image container -->
+            <div class="six-col-grid" id="sixColGrid"></div>
+            <script>
+                // Example data: alternate text and image
+                const gridData = [
+                    { type: 'text', value: '3<br>Global<br>Headquarters' },
+                    { type: 'image', value: 'assets/g-1.jpg' },
+                    { type: 'text', value: '4<br>Innovation' },
+                    { type: 'image', value: 'assets/g-2.jpg' },
+                    { type: 'text', value: '13<br>Countries' },
+                    { type: 'image', value: 'assets/g-3.jpg' },
+
+                    { type: 'image', value: 'assets/g-4.jpg' },
+                    { type: 'text', value: '65<br>Delivery Centers' },
+                    { type: 'image', value: 'assets/g-5.jpg' },
+                    { type: 'text', value: '700+<br>Clients' },
+                    { type: 'image', value: 'assets/g-6.jpg' },
+                    { type: 'text', value: '66,000+<br>Employees' },
+
+                    { type: 'text', value: '100+<br>Industry-<br>specific<br>AI Use Cases<br>7,000+<br>AI Specialists' },
+                    { type: 'image', value: 'assets/g-7.jpg' },
+                    { type: 'text', value: '3<br>DesAign Hubs<br>Across New York,<br>London and<br>Pune, India' },
+                    { type: 'image', value: 'assets/g-8.jpg' },
+                    { type: 'text', value: '20+<br>Industry and<br>Domain Centers<br>of Excellence' },
+                    { type: 'image', value: 'assets/g-9.jpg' }
+                ];
+
+                const grid = document.getElementById('sixColGrid');
+                gridData.forEach(cell => {
+                    const div = document.createElement('div');
+                    div.className = 'six-col-cell';
+                    if (cell.type === 'text') {
+                        div.innerHTML = `
+                            <span style="display:inline-block; position:relative;">
+                                <span class="counter-text" style="display:block; text-align:center; font-size: 20px; font-weight: bold;">${cell.value}</span>
+                            </span>
+                        `;
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = cell.value;
+                        img.alt = '';
+                        div.appendChild(img);
+                    }
+                    grid.appendChild(div);
+                });
+
+                // Counter animation function
+                function animateCounters() {
+                    const counterElements = document.querySelectorAll('.counter-text');
+
+                    counterElements.forEach(element => {
+                        const text = element.innerHTML;
+                        const numbers = text.match(/\d+/g);
+
+                        if (numbers) {
+                            let animatedText = text;
+
+                            numbers.forEach(num => {
+                                const targetNum = parseInt(num);
+                                let currentNum = 0;
+                                const increment = Math.ceil(targetNum / 50); // Adjust speed
+
+                                const counter = setInterval(() => {
+                                    currentNum += increment;
+                                    if (currentNum >= targetNum) {
+                                        currentNum = targetNum;
+                                        clearInterval(counter);
+                                    }
+
+                                    animatedText = text.replace(num, currentNum + (num.includes('+') ? '+' : ''));
+                                    element.innerHTML = animatedText;
+                                }, 50); // Animation speed
+                            });
+                        }
+                    });
+                }
+
+                // Start animation when page loads
+                window.addEventListener('load', () => {
+                    setTimeout(animateCounters, 500); // Small delay for better effect
+                });
+
+                // Optional: Trigger animation when scrolled into view
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                observer.observe(grid);
+            </script>
+        </div>
+        <!-- Awards  -->
+        <div class="awards-content">
+            <h2 class="awards-heading">Awards & Recognition</h2>
+            <div class="explore-more-container" style="margin-top: 30px; text-align: left;">
+                <span id="exploreMoreText"
+                    style="cursor:pointer; color: white; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center;">
+                    View All
+                    <span id="exploreMoreArrow"
+                        style="display: inline-block; margin-left: 8px; transition: transform 0.2s;">
+                        <i class="fa fa-arrow-up" aria-hidden="true"
+                            style="color: #f76e11; transform: rotate(45deg);"></i>
+                    </span>
+                </span>
+            </div>
+            <div class="awards-images">
+                <style>
+                    /* Awards slider styles (scoped to avoid colliding with other styles) */
+                    .awards-slider {
+                        position: relative;
+                        width: 100%;
+                        overflow: hidden;
+                        padding: 12px 0;
+                    }
+
+                    .awards-track {
+                        display: flex;
+                        gap: 16px;
+                        transition: transform 0.45s cubic-bezier(.22, .9, .32, 1);
+                        will-change: transform;
+                        align-items: stretch;
+                    }
+
+                    .award-slide {
+                        flex: 0 0 22%;
+                        min-width: 180px;
+                        max-width: 260px;
+                        position: relative;
+                        border-radius: 8px;
+                        overflow: visible;
+                        transition: transform 0.28s ease, box-shadow 0.28s ease;
+                        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+                        background: #fff;
+                    }
+
+                    .award-slide img {
+                        display: block;
+                        width: 100%;
+                        height: 350px;
+                        object-fit: cover;
+                        border-radius: 8px;
+                        transition: transform 0.28s ease;
+                        transform-origin: center;
+                    }
+
+                    /* overlay containing text + arrow (hidden by default) */
+                    .award-overlay {
+                        position: absolute;
+                        left: 12px;
+                        right: 12px;
+                        bottom: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 8px;
+                        background: rgba(0, 0, 0, 0.55);
+                        color: white;
+                        padding: 8px 10px;
+                        border-radius: 6px;
+                        opacity: 0;
+                        transform: translateY(8px);
+                        transition: opacity 0.22s ease, transform 0.22s ease;
+                        pointer-events: none;
+                    }
+
+                    /* ensure overlay text is white by default */
+                    .award-overlay .award-text {
+                        color: #fff;
+                        transition: color 0.18s ease;
+                    }
+
+                    /* when hovering the text itself change only the text color */
+                    .award-overlay .award-text:hover {
+                        color: #f76e11;
+                        cursor: pointer;
+                    }
+
+                    /* award text */
+                    .award-text {
+                        font-size: 0.95rem;
+                        line-height: 1.1;
+                        margin: 0;
+                        flex: 1 1 auto;
+                        text-align: left;
+                    }
+
+                    /* arrow button */
+                    .award-arrow {
+                        background: transparent;
+                        border: none;
+                        color: #f76e11;
+                        font-size: 1rem;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transform: rotate(0deg);
+                        pointer-events: auto;
+                    }
+
+                    /* rotate the icon 45deg so arrow points diagonally up */
+                    .award-arrow i {
+                        transform: rotate(45deg);
+                        display: inline-block;
+                    }
+
+                    /* Hover: reveal overlay and expand image horizontally */
+                    .award-slide:hover {
+                        transform: translateY(-6px);
+                        z-index: 3;
+                        box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+                    }
+
+                    .award-slide:hover img {
+                        transform: scaleX(1.12);
+                    }
+
+                    .award-slide:hover .award-overlay {
+                        opacity: 1;
+                        transform: translateY(0);
+                        pointer-events: auto;
+                    }
+
+                    /* Controls and progress */
+                    .awards-controls {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: 14px;
+                        gap: 12px;
+                    }
+
+                    .awards-progress {
+                        flex: 1 1 auto;
+                        height: 8px;
+                        background: #e6e6e6;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        margin-right: 12px;
+                    }
+
+                    .awards-progress-inner {
+                        height: 100%;
+                        width: 0%;
+                        background: linear-gradient(90deg, #f76e11 40%, #f97216 100%);
+                        transition: width 0.36s cubic-bezier(.22, .9, .32, 1);
+                    }
+
+                    .awards-btns {
+                        display: flex;
+                        gap: 8px;
+                        flex: 0 0 auto;
+                        margin-right: 80px;
+                    }
+
+                    .awards-btn {
+                        background: #fff;
+                        border: none;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                        cursor: pointer;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    /* responsive adjustments */
+                    @media (max-width: 1100px) {
+                        .award-slide {
+                            flex: 0 0 30%;
+                            min-width: 180px;
+                        }
+
+                        .award-slide img {
+                            height: 140px;
+                        }
+                    }
+
+                    @media (max-width: 760px) {
+                        .award-slide {
+                            flex: 0 0 46%;
+                            min-width: 140px;
+                        }
+
+                        .award-slide img {
+                            height: 120px;
+                        }
+                    }
+
+                    @media (max-width: 420px) {
+                        .award-slide {
+                            flex: 0 0 80%;
+                            min-width: 220px;
+                        }
+
+                        .awards-controls {
+                            flex-direction: column;
+                            align-items: stretch;
+                            gap: 8px;
+                        }
+
+                        .awards-progress {
+                            margin-right: 0;
+                        }
+                    }
+                </style>
+
+                <div class="awards-slider" id="awardsSlider">
+                    <div class="awards-track" id="awardsTrack">
+                        <!-- Eight slides (images use placeholder URLs) -->
+                        <div class="award-slide">
+                            <img src="assets/awards-1.jpg" alt="Award 1">
+                            <div class="award-overlay">
+                                <p class="award-text">OPPTY Positioned in the Leaders’ Quadrant of AIM Research’s 2025
+                                    PeMa Quadrant for Agentic AI Services</p>
+                                <button class="award-arrow" aria-label="Read more about Award 1"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="award-slide">
+                            <img src="assets/awards-2.jpg" alt="Award 2">
+                            <div class="award-overlay">
+                                <p class="award-text">OPPTY Procurement Named a Leader in the 2025 ISG Provider Lens™
+                                    Global Report for Procurement Services</p>
+                                <button class="award-arrow" aria-label="Read more about Award 2"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="award-slide">
+                            <img src="assets/awards-3.jpg" alt="Award 3">
+                            <div class="award-overlay">
+                                <p class="award-text">OPPTY named to TIME’s 2025 List of World’s Most Sustainable
+                                    Companies</p>
+                                <button class="award-arrow" aria-label="Read more about Award 3"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="award-slide">
+                            <img src="assets/awards-4.png" alt="Award 4">
+                            <div class="award-overlay">
+                                <p class="award-text">OPPTY Recognized as One of America’s Most
+                                    Reliable Companies 2025</p>
+                                <button class="award-arrow" aria-label="Read more about Award 4"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="award-slide">
+                            <img src="assets/awards-5.png" alt="Award 5">
+                            <div class="award-overlay">
+                                <p class="award-text">OPPTY Analytics Wins the AWS AI Award for Gen AI
+                                    and Advanced Analytics</p>
+                                <button class="award-arrow" aria-label="Read more about Award 5"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="award-slide">
+                            <img src="assets/awards-6.png" alt="Award 6">
+                            <div class="award-overlay">
+                                <p class="award-text">Howden Group and OPPTY have been awarded the
+                                    title of Best Data Story or Data Visualisation</p>
+                                <button class="award-arrow" aria-label="Read more about Award 6"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="award-slide">
+                            <img src="assets/awards-7.png" alt="Award 7">
+                            <div class="award-overlay">
+                                <p class="award-text">OPPTY Achieves Platinum Medal Rating from
+                                    EcoVadis for Sustainability Performance</p>
+                                <button class="award-arrow" aria-label="Read more about Award 7"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="award-slide">
+                            <img src="assets/awards-1.jpg" alt="Award 8">
+                            <div class="award-overlay">
+                                <p class="award-text">OPPTY Positioned in the Leaders’ Quadrant of AIM Research’s 2025
+                                    PeMa Quadrant for Agentic AI Services</p>
+                                <button class="award-arrow" aria-label="Read more about Award 8"><i
+                                        class="fa fa-arrow-up"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls: progress + prev/next -->
+                    <div class="awards-controls" aria-hidden="false">
+                        <div class="awards-progress" aria-hidden="true">
+                            <div class="awards-progress-inner" id="awardsProgress"></div>
+                        </div>
+                        <div class="awards-btns">
+                            <button class="awards-btn" id="awardsPrev" aria-label="Previous awards"><i
+                                    class="fa fa-chevron-left"></i></button>
+                            <button class="awards-btn" id="awardsNext" aria-label="Next awards"><i
+                                    class="fa fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    (function () {
+                        const container = document.getElementById('awardsSlider');
+                        const track = document.getElementById('awardsTrack');
+                        const slides = Array.from(track.children);
+                        const prev = document.getElementById('awardsPrev');
+                        const next = document.getElementById('awardsNext');
+                        const progressInner = document.getElementById('awardsProgress');
+
+                        let currentIndex = 0;
+                        let visibleCount = 4; // will be recalculated
+                        let slideWidth = 0;
+                        const gap = parseInt(getComputedStyle(track).gap || 16, 10);
+
+                        function calcSizes() {
+                            // Calculate slide width including gap
+                            const first = slides[0];
+                            if (!first) return;
+                            // Use bounding width (includes padding/border)
+                            const rect = first.getBoundingClientRect();
+                            slideWidth = rect.width + gap;
+                            // visible count based on container width
+                            visibleCount = Math.max(1, Math.floor(container.clientWidth / slideWidth));
+                            // If visibleCount greater than total slides, clamp
+                            visibleCount = Math.min(visibleCount, slides.length);
+                            // adjust index bounds
+                            const maxIndex = Math.max(0, slides.length - visibleCount);
+                            if (currentIndex > maxIndex) currentIndex = maxIndex;
+                        }
+
+                        function updateTrack(animate = true) {
+                            if (!animate) track.style.transition = 'none';
+                            else track.style.transition = '';
+                            const x = currentIndex * slideWidth;
+                            track.style.transform = `translateX(-${x}px)`;
+                            updateProgress();
+                            if (!animate) {
+                                // force reflow then restore
+                                void track.offsetWidth;
+                                track.style.transition = '';
+                            }
+                        }
+
+                        function updateProgress() {
+                            const maxIndex = Math.max(0, slides.length - visibleCount);
+                            const percent = maxIndex === 0 ? 100 : (currentIndex / maxIndex) * 100;
+                            progressInner.style.width = percent + '%';
+                        }
+
+                        prev.addEventListener('click', () => {
+                            currentIndex = Math.max(0, currentIndex - 1);
+                            updateTrack();
+                        });
+
+                        next.addEventListener('click', () => {
+                            const maxIndex = Math.max(0, slides.length - visibleCount);
+                            currentIndex = Math.min(maxIndex, currentIndex + 1);
+                            updateTrack();
+                        });
+
+                        // Allow clicking arrow overlay to act like read more - simple focus demo
+                        track.addEventListener('click', (e) => {
+                            const btn = e.target.closest('.award-arrow');
+                            if (!btn) return;
+                            const slide = e.target.closest('.award-slide');
+                            const idx = slides.indexOf(slide);
+                            // Move clicked slide into view (if needed)
+                            if (idx !== -1) {
+                                if (idx < currentIndex) currentIndex = idx;
+                                else if (idx >= currentIndex + visibleCount) currentIndex = Math.min(idx, slides.length - visibleCount);
+                                updateTrack();
+                            }
+                            // Here you can open a details panel or navigate; demo shows a console log
+                            console.log('Read more clicked for slide', idx + 1);
+                        });
+
+                        // Resize handling
+                        let resizeTimeout;
+                        window.addEventListener('resize', () => {
+                            clearTimeout(resizeTimeout);
+                            resizeTimeout = setTimeout(() => {
+                                calcSizes();
+                                updateTrack(false);
+                            }, 120);
+                        });
+
+                        // Init once DOM and images are ready
+                        function init() {
+                            calcSizes();
+                            // ensure track fits initial slides
+                            updateTrack(false);
+
+                            // allow dragging with mouse/touch for quick navigation (optional)
+                            let isDown = false, startX = 0, startTranslate = 0;
+                            track.addEventListener('pointerdown', (ev) => {
+                                isDown = true;
+                                track.setPointerCapture(ev.pointerId);
+                                startX = ev.clientX;
+                                const style = track.style.transform;
+                                const m = /translateX\(-?([\d.]+)px\)/.exec(style);
+                                startTranslate = m ? parseFloat(m[1]) : 0;
+                                track.style.transition = 'none';
+                            });
+                            track.addEventListener('pointermove', (ev) => {
+                                if (!isDown) return;
+                                const dx = ev.clientX - startX;
+                                let newTranslate = Math.max(0, startTranslate - dx);
+                                track.style.transform = `translateX(-${newTranslate}px)`;
+                            });
+                            track.addEventListener('pointerup', (ev) => {
+                                isDown = false;
+                                track.releasePointerCapture(ev.pointerId);
+                                track.style.transition = '';
+                                // snap to nearest slide
+                                const style = track.style.transform;
+                                const m = /translateX\(-?([\d.]+)px\)/.exec(style);
+                                const translate = m ? parseFloat(m[1]) : 0;
+                                const idx = Math.round(translate / slideWidth);
+                                const maxIndex = Math.max(0, slides.length - visibleCount);
+                                currentIndex = Math.min(maxIndex, Math.max(0, idx));
+                                updateTrack();
+                            });
+                            track.addEventListener('pointercancel', () => { isDown = false; });
+
+                            // Make sure images loaded before initial sizing (some browsers may not have sizes yet)
+                            const imgs = track.querySelectorAll('img');
+                            let loaded = 0;
+                            if (imgs.length === 0) {
+                                initFinished();
+                            } else {
+                                imgs.forEach(img => {
+                                    if (img.complete) loaded++;
+                                    else img.addEventListener('load', () => { loaded++; if (loaded === imgs.length) initFinished(); });
+                                });
+                                if (loaded === imgs.length) initFinished();
+                            }
+                        }
+
+                        function initFinished() {
+                            calcSizes();
+                            updateTrack(false);
+                        }
+
+                        // Kick off
+                        init();
+
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- seventh page -->
+    <div class="seventh-page-container">
+        <div class="smarter-heading">
+            <h2 class="smarterBusiness-heading animated-gradient-text">Co-create a Smarter Business with OPPTY Today
+            </h2>
+            <style>
+                .animated-gradient-text {
+                    background: linear-gradient(90deg, #f76e11, green, red, blue);
+                    background-size: 300% 100%;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: gradientFlow 3s ease-in-out infinite;
+                }
+
+                @keyframes gradientFlow {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    50% {
+                        background-position: 100% 50%;
+                    }
+
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+            </style>
+        </div>
+        <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;margin-top:50px;">
+            <p class="view-all-text-partner-hover">
+                Contact Us
+                <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                    <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                </span>
+            </p>
+        </div>
+    </div>
+    <!-- footer section -->
     <!--Footer section-->
     <footer class="site-footer">
         <div class="footer-container">
@@ -824,8 +1608,8 @@
                 </div>
             </div>
         </div>
-        <div class="social-media" style="margin-left: 20px;">
-            <!-- <h5 style="margin-right: 1050px;color:#f76e11;">Social Media</h5> -->
+        <div class="social-media" style="margin-left: 50px;">
+            <!-- <h5 style="margin-right: 1050px;color: #f76e11;">Social Media</h5> -->
             <div class="social-icons" aria-label="Social links" style="margin-top:18px;">
                 <style>
                     .social-icons {
@@ -937,7 +1721,8 @@
             </div>
         </div>
     </footer>
-    <!-- copyrights -->
+    </footer>
+    <!-- Copyright Section -->
     <footer class="site-footer">
         <div class="footer-top-border"></div>
 
@@ -952,9 +1737,6 @@
             </div>
         </div>
     </footer>
-    <!-- External JS -->
-    <script src="perspectives.js"></script>
-     <script src="home.js"></script>
     <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
 </body>
 
