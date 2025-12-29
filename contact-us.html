@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us | Oppty TechHub</title>
+    <meta name="description" content="Contact Oppty TechHub. Transparent communication, agile delivery, and a commitment to excellence." />
+    <link rel="icon" href="data:,">
+    <style>
+        :root {
+            --bg: #f0f4f8;
+            --panel: #0f172a;
+            --panel-2: #111a2e;
+            --text: #e5e7eb;
+            --muted: #b6c2cf;
+            --accent: #60a5fa;
+            --accent-2: #38bdf8;
+            --border: #22314e;
+            --ok: #34d399;
+            --shadow: 0 10px 24px rgba(2, 6, 23, 0.6), 0 2px 6px rgba(2, 6, 23, 0.35);
+            --radius: 14px;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text);
+            background:
+                radial-gradient(1200px 600px at 90% -10%, rgba(56, 189, 248, 0.10), transparent 60%),
+                radial-gradient(1000px 500px at -10% 20%, rgba(96, 165, 250, 0.12), transparent 60%),
+                linear-gradient(180deg, #0a0f1b 0%, #0b1220 100%);
+        }
+
+        .wrap {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        header {
+            display: grid;
+            gap: 10px;
+            padding: 22px;
+            background: linear-gradient(180deg, rgba(14, 23, 45, 0.9), rgba(14, 23, 45, 0.8));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(6px);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .eyebrow .dot { width: 6px; height: 6px; background: var(--ok); border-radius: 999px; box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.12); }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(24px, 3.2vw, 40px);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .lede {
+            margin: 4px 0 0;
+            color: var(--muted);
+            max-width: 68ch;
+        }
+
+        main { margin-top: 28px; }
+
+        .grid {
+            display: grid;
+            gap: 22px;
+        }
+        @media (min-width: 840px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(19, 29, 55, 0.85), rgba(17, 25, 46, 0.85));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 22px;
+        }
+
+        .card h2 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            letter-spacing: .02em;
+        }
+
+        address {
+            font-style: normal;
+            display: grid;
+            gap: 10px;
+        }
+
+        .item {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            align-items: start;
+            gap: 12px;
+            padding: 10px 0;
+            border-top: 1px dashed rgba(255,255,255,.08);
+        }
+        .item:first-child { border-top: 0; }
+
+        .icon {
+            width: 20px; height: 20px; margin-top: 2px; color: var(--accent);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover { color: var(--accent-2); text-decoration: underline; }
+        a.btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: linear-gradient(180deg, #2563eb, #1d4ed8);
+            color: white;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.1);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35), inset 0 1px 0 rgba(255,255,255,.15);
+            text-decoration: none;
+        }
+        a.btn:hover { filter: brightness(1.06); }
+        a.btn:focus-visible, a:focus-visible {
+            outline: 3px solid #38bdf8;
+            outline-offset: 3px;
+            border-radius: 10px;
+        }
+
+        ul.feature-list {
+            margin: 8px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+        .feature {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            gap: 12px;
+            align-items: start;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: linear-gradient(180deg, var(--panel), var(--panel-2));
+        }
+        .check {
+            color: var(--ok);
+            width: 18px; height: 18px; margin-top: 2px;
+        }
+        .muted { color: var(--muted); }
+
+        footer {
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Oppty TechHub",
+        "url": "https://oppty.in",
+        "email": "info@oppty.in",
+        "telephone": "+91 9491209900",
+        "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+91 9491209900",
+            "contactType": "customer support",
+            "areaServed": "IN",
+            "availableLanguage": ["en"]
+        }]
+    }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header aria-label="Contact & commitment">
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Contact & Commitment to Excellence</span>
+            <h1>Oppty TechHub</h1>
+            <p class="lede">Building lasting relationships through transparent communication, agile delivery, and continuous improvement.</p>
+        </header>
+
+        <main class="grid" id="content">
+            <section class="card" aria-labelledby="contact-title">
+                <h2 id="contact-title">Contact</h2>
+                <address>
+                    <div class="item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.2 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.12a2 2 0 0 1 2.11-.45c.83.29 1.7.5 2.6.62A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div>
+                            <div class="muted">Phone</div>
+                            <a href="tel:+919491209900" aria-label="Call Oppty TechHub">+91 9491209900</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m22 6-9.42 6.28a2 2 0 0 1-2.16 0L1 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <div>
+                            <div class="muted">Email</div>
+                            <a href="mailto:info@oppty.in" aria-label="Email Oppty TechHub">info@oppty.in</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12Z" stroke="currentColor" stroke-width="2"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a24 24 0 0 0 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <div>
+                            <div class="muted">Website</div>
+                            <a href="https://oppty.in" target="_blank" rel="noopener">oppty.in</a>
+                        </div>
+                    </div>
+                </address>
+
+                <div style="margin-top:14px">
+                    <a class="btn" href="mailto:info@oppty.in?subject=Inquiry%20from%20Website">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16v16H4z" stroke="white" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Send Email
+                    </a>
+                </div>
+            </section>
+
+            <section class="card" aria-labelledby="commitment-title">
+                <h2 id="commitment-title">Commitment to Excellence</h2>
+                <ul class="feature-list">
+                    <li class="feature">
+                        <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m20 6-11 11L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div>
+                            <strong>Transparent communication</strong>
+                            <div class="muted">Regular progress updates and clear expectations.</div>
+                        </div>
+                    </li>
+                    <li class="feature">
+                        <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m20 6-11 11L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div>
+                            <strong>Agile methodology</strong>
+                            <div class="muted">Adapt quickly to changing requirements.</div>
+                        </div>
+                    </li>
+                    <li class="feature">
+                        <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m20 6-11 11L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div>
+                            <strong>Skilled professionals</strong>
+                            <div class="muted">Proven technical and domain expertise.</div>
+                        </div>
+                    </li>
+                    <li class="feature">
+                        <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m20 6-11 11L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div>
+                            <strong>Best practices & standards</strong>
+                            <div class="muted">Industry-aligned engineering and governance.</div>
+                        </div>
+                    </li>
+                    <li class="feature">
+                        <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m20 6-11 11L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div>
+                            <strong>Continuous improvement</strong>
+                            <div class="muted">Ongoing investment in technology and team development.</div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            © <span id="year"></span> Oppty TechHub. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
