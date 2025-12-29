@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Oppty TechHub - Expanded</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-navy: #0f2b4a;   /* Corporate Navy */
+            --accent-orange: #ff9f1c;  /* Brand Orange */
+            --bg-light: #f8fbff;       /* Very Light Blue Background */
+            --white: #ffffff;
+            --text-grey: #555555;
+            --border-color: #e0e0e0;
+            --radius: 8px;
+            --transition: all 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--primary-navy);
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1000px; /* Slightly narrower for better reading focus */
+            margin: 0 auto;
+        }
+
+        /* --- SECTION HEADER --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-orange);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- ACCORDION STYLES --- */
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .accordion-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: var(--transition);
+            border-left: 5px solid transparent; /* Hidden border for active state */
+        }
+
+        .accordion-item.active {
+            border-left-color: var(--accent-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Header (Clickable Area) */
+        .accordion-header {
+            width: 100%;
+            padding: 25px 30px;
+            background: var(--white);
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-navy);
+            text-align: left;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background-color: #f9f9f9;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-icon {
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .toggle-icon {
+            color: #ccc;
+            transition: transform 0.4s ease;
+        }
+
+        .accordion-item.active .toggle-icon {
+            transform: rotate(180deg);
+            color: var(--accent-orange);
+        }
+
+        /* Body (Content Area) */
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            background-color: var(--white);
+        }
+
+        /* Inner Layout: Text + Image */
+        .body-inner {
+            padding: 0 30px 30px 30px;
+            display: grid;
+            grid-template-columns: 3fr 2fr; /* Text takes more space than image */
+            gap: 30px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        .accordion-item.active .body-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .body-text p {
+            margin-bottom: 15px;
+            color: var(--text-grey);
+            font-size: 0.95rem;
+        }
+
+        .body-text ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .body-text li {
+            font-size: 0.9rem;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .body-text li::before {
+            content: '\f00c'; /* Checkmark */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-orange);
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .body-image {
+            width: 100%;
+            height: 200px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .body-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .accordion-item:hover .body-image img {
+            transform: scale(1.05); /* Subtle zoom on hover */
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .body-inner {
+                grid-template-columns: 1fr; /* Stack text and image */
+            }
+            .body-image {
+                height: 180px;
+                order: -1; /* Move image to top of body on mobile */
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="section-header">
+            <h2 class="section-title">Why Choose Oppty TechHub?</h2>
+            <p class="section-subtitle">We combine technical excellence with a deep understanding of business strategy to deliver results that matter.</p>
+        </header>
+
+        <div class="accordion">
+
+            <div class="accordion-item active">
+                <button class="accordion-header">
+                    <div class="header-content">
+                        <i class="fa-solid fa-layer-group header-icon"></i>
+                        <span>Expertise Across Diverse Domains</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-body">
+                    <div class="body-inner">
+                        <div class="body-text">
+                            <p>We don't just write code; we build ecosystems. Our specialized knowledge spans critical sectors including IT infrastructure, BPO operations, E-commerce scaling, and advanced GIS Mapping.</p>
+                            <ul>
+                                <li><strong>Full-Stack Development:</strong> React, Node.js, Python, & AWS.</li>
+                                <li><strong>Geospatial Tech:</strong> ArcGIS, QGIS, & Remote Sensing.</li>
+                                <li><strong>Business Logic:</strong> ERP integration & Workflow Automation.</li>
+                            </ul>
+                        </div>
+                        <div class="body-image">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Diverse Technical Expertise">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <div class="header-content">
+                        <i class="fa-solid fa-handshake header-icon"></i>
+                        <span>Client-Focused Approach</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-body">
+                    <div class="body-inner">
+                        <div class="body-text">
+                            <p>Your goals become our roadmap. We adopt an Agile methodology that ensures transparency and adaptability. From the initial discovery phase to final deployment, you are an integral part of the process.</p>
+                            <ul>
+                                <li>Transparent Sprint Planning & Reviews.</li>
+                                <li>Dedicated Project Managers for every account.</li>
+                                <li>Regular strategic alignment workshops.</li>
+                            </ul>
+                        </div>
+                        <div class="body-image">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Client Focused Meeting">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <div class="header-content">
+                        <i class="fa-solid fa-microchip header-icon"></i>
+                        <span>Innovative Technology Stack</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-body">
+                    <div class="body-inner">
+                        <div class="body-text">
+                            <p>Stay ahead of the curve with future-proof solutions. We leverage modern frameworks and cloud-native architectures to ensure your applications are scalable, secure, and incredibly fast.</p>
+                            <ul>
+                                <li>Cloud-Native Architecture (Azure/AWS).</li>
+                                <li>AI & Machine Learning Integration.</li>
+                                <li>Microservices for maximum scalability.</li>
+                            </ul>
+                        </div>
+                        <div class="body-image">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Innovative Technology">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <div class="header-content">
+                        <i class="fa-solid fa-clipboard-check header-icon"></i>
+                        <span>Quality Assurance</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-body">
+                    <div class="body-inner">
+                        <div class="body-text">
+                            <p>Quality isn't an afterthought; it's embedded in our code. We utilize automated testing frameworks and rigorous code reviews to maintain ISO-standard delivery quality across all projects.</p>
+                            <ul>
+                                <li>Automated Testing (Selenium/Cypress).</li>
+                                <li>Continuous Integration/Deployment (CI/CD).</li>
+                                <li>Performance & Security Audits.</li>
+                            </ul>
+                        </div>
+                        <div class="body-image">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quality Assurance Testing">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <div class="header-content">
+                        <i class="fa-solid fa-chart-line header-icon"></i>
+                        <span>Cost-Effective Solutions</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-body">
+                    <div class="body-inner">
+                        <div class="body-text">
+                            <p>Maximize your ROI with our optimized delivery models. We combine onsite strategy with offshore execution to provide elite-level development at a competitive price point, without compromising on quality.</p>
+                            <ul>
+                                <li>Flexible Engagement Models (Fixed/T&M).</li>
+                                <li>Optimized Resource Allocation.</li>
+                                <li>Reduced Operational Overhead.</li>
+                            </ul>
+                        </div>
+                        <div class="body-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cost Effective Growth">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <div class="header-content">
+                        <i class="fa-solid fa-headset header-icon"></i>
+                        <span>Dedicated Support</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-body">
+                    <div class="body-inner">
+                        <div class="body-text">
+                            <p>Our relationship doesn't end at deployment. We offer comprehensive maintenance packages and responsive support to ensure your business runs smoothly 24/7.</p>
+                            <ul>
+                                <li>24/7 Monitoring & Incident Response.</li>
+                                <li>Regular Security Patches & Updates.</li>
+                                <li>Dedicated Support Ticketing System.</li>
+                            </ul>
+                        </div>
+                        <div class="body-image">
+                            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dedicated Support Team">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.accordion-header');
+
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const currentItem = header.parentElement;
+                    const isActive = currentItem.classList.contains('active');
+                    const currentBody = currentItem.querySelector('.accordion-body');
+
+                    // 1. Close all other items for a clean "Accordion" effect
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        if (item !== currentItem) {
+                            item.classList.remove('active');
+                            item.querySelector('.accordion-body').style.maxHeight = null;
+                        }
+                    });
+
+                    // 2. Toggle the clicked item
+                    if (isActive) {
+                        currentItem.classList.remove('active');
+                        currentBody.style.maxHeight = null;
+                    } else {
+                        currentItem.classList.add('active');
+                        // Set max-height to the scrollHeight so the CSS transition works
+                        currentBody.style.maxHeight = currentBody.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // 3. Initialize the first item (Active by default)
+            const activeItem = document.querySelector('.accordion-item.active');
+            if (activeItem) {
+                const body = activeItem.querySelector('.accordion-body');
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+        });
+    </script>
+
+</body>
+</html>

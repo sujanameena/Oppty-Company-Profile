@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS Mapping Solutions & Capabilities | Company Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & GLOBAL RESET --- */
+        :root {
+            --primary-navy: #002b5c;   /* Dark Blue for Banner */
+            --accent-yellow: #f9a825;  /* Gold/Orange for Accents */
+            --section-title-blue: #0056b3; /* Brighter Blue for Section Headers */
+            --bg-light: #f4f7fb;       /* Overall Page Background */
+            --text-dark: #2c3e50;      /* Main Heading Color */
+            --text-body: #5a6b7d;      /* Body Text Color */
+            --white: #ffffff;
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+            --radius-lg: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-body);
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* --- MAIN LAYOUT CONTAINER --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        /* --- HERO BANNER SECTION --- */
+        .gis-banner {
+            background: linear-gradient(135deg, var(--primary-navy), #001f4d);
+            border-radius: var(--radius-lg);
+            padding: 60px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--white);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .sub-heading {
+            color: var(--accent-yellow);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .banner-title {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .banner-text {
+            font-size: 1.15rem;
+            color: #e0e6ed;
+            margin-bottom: 35px;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: var(--primary-navy);
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-yellow);
+            box-shadow: 0 5px 15px rgba(249, 168, 37, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--accent-yellow);
+            transform: translateY(-3px);
+        }
+
+        /* Banner Illustration Area */
+        .banner-image-wrapper {
+            flex: 0 0 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Simulated 3D Map Icon */
+        .map-icon-3d {
+            font-size: 12rem;
+            background: linear-gradient(to bottom right, #ff6b6b, #feca57, #48dbfb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.25));
+            animation: float-icon 4s ease-in-out infinite;
+        }
+
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* --- MAIN CONTENT SPLIT SECTION --- */
+        .content-split {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr; /* Left column is wider */
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Left Column: Capabilities */
+        .section-header {
+            color: var(--section-title-blue);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-yellow);
+            border-radius: 2px;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 30px; /* Row gap, Column gap */
+        }
+
+        .cap-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background-color: var(--white);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cap-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .cap-icon-box {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(249, 168, 37, 0.15); /* Light orange background */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cap-icon {
+            font-size: 1.8rem;
+            color: var(--accent-yellow);
+        }
+
+        .cap-text h4 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .cap-text p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Right Column: "Why Us" Card */
+        .why-us-card {
+            background: var(--white);
+            padding: 40px 35px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border-left: 6px solid var(--accent-yellow); /* Signature yellow border line */
+            position: sticky;
+            top: 40px; /* Stays in view on scroll */
+        }
+
+        .why-us-card h3 {
+            color: var(--section-title-blue);
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .why-item {
+            margin-bottom: 30px;
+        }
+
+        .why-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .why-item h5 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Small checkmark icon for "Why Us" titles */
+        .why-item h5::before {
+            content: '\f00c'; /* FontAwesome Check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .why-item p {
+            font-size: 0.95rem;
+            padding-left: 25px; /* Indent text to align with title */
+        }
+
+        /* --- RESPONSIVE DESIGN MEDIA QUERIES --- */
+        @media (max-width: 992px) {
+            .gis-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 30px;
+            }
+            .banner-content {
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+            .banner-title {
+                font-size: 2.5rem;
+            }
+            .banner-image-wrapper {
+                flex: auto;
+                width: 100%;
+            }
+            .map-icon-3d {
+                font-size: 10rem;
+            }
+            .content-split {
+                grid-template-columns: 1fr; /* Stack columns vertically */
+                gap: 50px;
+            }
+            .why-us-card {
+                position: static; /* Remove sticky on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr; /* Stack capabilities items */
+            }
+            .cap-item {
+                padding: 20px;
+            }
+            .section-header {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <section class="gis-banner">
+            <div class="banner-content js-scroll-fade">
+                <span class="sub-heading">Specialized Expertise</span>
+                <h1 class="banner-title">GIS Mapping Solutions</h1>
+                <p class="banner-text">Leverage advanced Geographic Information Systems (GIS) technology to visualize complex datasets, analyze spatial patterns, and optimize decision-making processes.</p>
+                <a href="#" class="cta-button">Discover More</a>
+            </div>
+            
+            <div class="banner-image-wrapper js-scroll-fade">
+                <i class="fa-solid fa-map-location-dot map-icon-3d"></i>
+            </div>
+        </section>
+
+        <div class="content-split">
+            
+            <div class="left-col">
+                <h2 class="section-header js-scroll-fade">Our Capabilities</h2>
+                
+                <div class="capabilities-grid">
+                    <div class="cap-item js-scroll-fade">
+                        <div class="cap-icon-box">
+                            <i class="fa-solid fa-layer-group cap-icon"></i>
+                        </div>
+                        <div class="cap-text">
+                            <h4>Spatial Analysis & Modeling</h4>
+                            <p>We perform complex spatial analysis to uncover hidden patterns, trends, and relationships. Our services support site selection, route optimization, risk assessment, and resource allocation, empowering data-driven strategic planning.</p>
+                        </div>
+                    </div>
+                    <div class="cap-item js-scroll-fade">
+                        <div class="cap-icon-box">
+                            <i class="fa-solid fa-database cap-icon"></i>
+                        </div>
+                        <div class="cap-text">
+                            <h4>Data Processing & Management</h4>
+                            <p>Handle the entire lifecycle of geospatial data. From large-scale collection and digitization to rigorous cleaning, validation, and integration across multiple formats, we ensure your data is accurate and analysis-ready.</p>
+                        </div>
+                    </div>
+                    <div class="cap-item js-scroll-fade">
+                        <div class="cap-icon-box">
+                            <i class="fa-solid fa-satellite cap-icon"></i>
+                        </div>
+                        <div class="cap-text">
+                            <h4>Remote Sensing & Imagery</h4>
+                            <p>Leverage cutting-edge technology to acquire and interpret high-resolution aerial and satellite imagery. Our expertise includes land cover classification, change detection, vegetation monitoring, and environmental impact assessment.</p>
+                        </div>
+                    </div>
+                    <div class="cap-item js-scroll-fade">
+                        <div class="cap-icon-box">
+                            <i class="fa-solid fa-map-marked-alt cap-icon"></i>
+                        </div>
+                        <div class="cap-text">
+                            <h4>Custom GIS Development</h4>
+                            <p>We design and build bespoke GIS software solutions tailored to your business. From interactive web-based mapping portals and mobile field data collection apps to seamless enterprise system integrations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <div class="why-us-card js-scroll-fade">
+                    <h3>Why Choose Us for GIS?</h3>
+                    
+                    <div class="why-item">
+                        <h5>Proven Track Record</h5>
+                        <p>Over 5 years of specialized experience delivering complex spatial analysis projects across various industries.</p>
+                    </div>
+
+                    <div class="why-item">
+                        <h5>Expert Team</h5>
+                        <p>A dedicated team of 60+ certified GIS analysts and developers proficient in industry-leading ESRI and open-source tools.</p>
+                    </div>
+
+                    <div class="why-item">
+                        <h5>Scalable Solutions</h5>
+                        <p>Capable of handling time-critical, high-volume assignments for large-scale enterprise projects with precision.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all elements with the 'js-scroll-fade' class
+            const fadeElements = document.querySelectorAll('.js-scroll-fade');
+
+            const observerOptions = {
+                root: null, // Use the viewport as the root
+                threshold: 0.15, // Trigger when 15% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slightly offset the trigger point
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        // Add a class to trigger the CSS transition
+                        entry.target.classList.add('is-visible');
+                        // Stop observing once animated
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(el => {
+                // Set initial state via JS to ensure progressive enhancement
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(el);
+            });
+
+            // Add the class that defines the final visible state
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .js-scroll-fade.is-visible {
+                    opacity: 1 !important;
+                    transform: translateY(0) !important;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+
+</body>
+</html>
