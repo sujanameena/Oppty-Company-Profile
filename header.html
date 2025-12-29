@@ -1,57 +1,384 @@
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<!DOCTYPE html>
+<html lang="en">
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f4f6fb;
-      padding: 20px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Template</title>
 
-    .doc {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
-      padding: 24px 28px 32px;
-    }
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    /* Colors */
-    :root {
-      --blue: #003366;
-      --light-blue: #e6f2ff;
-      --orange: #ff9933;
-      --light-orange: #ffb366;
-    }
+    <style>
+        :root {
+            --primary-orange: #F7941D;
+            --primary-blue: #003366;
+            --white: #ffffff;
+        }
 
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 3px solid var(--orange);
-      padding-bottom: 12px;
-      margin-bottom: 24px;
-    }
+        body {
+            margin: 0;
+            padding-top: 80px;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-    .header-logo img {
-      max-height: 60px;
-    }
+        /* NAVBAR */
+        .navbar {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-bottom: 3px solid var(--primary-orange);
+        }
 
-    .header-title {
-      text-align: right;
-    }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+        }
 
-    .header-title h1 {
-      font-size: 26px;
-      color: var(--blue);
-      letter-spacing: 1px;
-    }
+        .navbar-brand span {
+            color: var(--primary-orange);
+        }
 
-    .header-title p {
-      font-size: 12px;
-      color: var(--orange);
-      font-weight: 600;
-    }
+        .navbar-toggler {
+            border: none;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-orange);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: -5px;
+            background: var(--primary-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .btn-custom {
+            background: var(--primary-orange);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid var(--primary-orange);
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background: transparent;
+            color: var(--primary-orange);
+        }
+
+        /* MOBILE */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                background: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            }
+
+            .nav-link {
+                margin: 10px 0;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* footer base */
+        .site-footer {
+            background-color: #111;
+            color: #fff;
+            padding: 40px 60px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        /* about column */
+        .footer-about img.footer-logo {
+            width: 130px;
+            margin-bottom: 12px;
+        }
+
+        .footer-about p {
+            color: #ccc;
+        }
+
+        /* footer headings */
+        .footer-column h4 {
+            color: #f76e11;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* links */
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .footer-column a:hover {
+            color: #f76e11;
+        }
+
+        /* quick links list */
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin: 6px 0;
+        }
+
+        /* social media section */
+        .social-media {
+            margin-top: 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .social-link {
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 16px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+        }
+
+        .social-link.linkedin {
+            background: #0077B5;
+        }
+
+        .social-link.twitter {
+            background: #1DA1F2;
+        }
+
+        .social-link.facebook {
+            background: #1877F2;
+        }
+
+        .social-link.instagram {
+            background: radial-gradient(circle at 15% 15%, #feda75 0%, #f58529 20%, #dd2a7b 50%, #515BD4 100%);
+        }
+
+        .social-link.youtube {
+            background: #FF0000;
+        }
+
+        .social-link.github {
+            background: grey;
+        }
+
+        .social-link i {
+            color: #fff;
+        }
+
+        /* copyright area */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+             margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        .recognitions-container {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .recognitions-container img {
+            width: 70px;
+            height: auto;
+            filter: brightness(0.95);
+        }
+
+        /* responsive */
+        @media (max-width: 600px) {
+            .site-footer {
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                OPPTY <span>TECHHUB</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">GIS Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Why Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-custom ms-lg-3" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="assets/oppty.png" alt="Oppty BPO Logo" class="footer-logo">
+                    <p>Power up your success with innovative IT, BPO, E-commerce, Web Development, and AI solutions
+                        tailored to your vision.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Hyderabad Locations</h4>
+                    <p>Flat 601, Mahitha's Green Galaxy,<br> CBCID Colony, Kukatpally, Hyderabad, Telangana 500085</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Udaipur Locations</h4>
+                    <p>Plot No: 26, 100 Feet Rd, Shobhagpura, Udaipur, Rajasthan 313011</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p><a href="mailto:info@oppty.in">info@oppty.in</a></p>
+                    <p><a href="tel:+919491209900">+91-9491209900</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <div class="social-icons">
+                    <a class="social-link linkedin" href="https://www.linkedin.com/" target="_blank"
+                        rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
+                    <a class="social-link twitter" href="https://twitter.com/" target="_blank"
+                        rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+                    <a class="social-link facebook" href="https://facebook.com/" target="_blank"
+                        rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+                    <a class="social-link instagram" href="https://www.instagram.com/" target="_blank"
+                        rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+                    <a class="social-link youtube" href="https://www.youtube.com/" target="_blank"
+                        rel="noopener noreferrer"><i class="fa fa-youtube-play"></i></a>
+                    <a class="social-link github" href="https://github.com/" target="_blank"
+                        rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="recognitions-container">
+                <img src="C:\Users\Hethika\OneDrive\Desktop\HTML Learning\js\oppty\copyright1.png.png" alt="MSME India">
+                <img src="C:\Users\Hethika\OneDrive\Desktop\HTML Learning\js\oppty\copyright2.png.png"
+                    alt="ISO 9001:2015">
+                <img src="C:\Users\Hethika\OneDrive\Desktop\HTML Learning\js\oppty\copyright3.jpg.jpg"
+                    alt="ISO 22000:2018">
+            </div>
+            <p>&copy; <span id="year"></span> Oppty. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
