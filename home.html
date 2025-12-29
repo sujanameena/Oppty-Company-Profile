@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppty TechHub | Digital Transformation Partner</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+</head>
+<style>
+    :root {
+        --primary-orange: #F7941D;
+        --primary-blue: #003366;
+        --light-bg: #F4F7FA;
+        --white: #ffffff;
+        --dark-overlay: rgba(0, 51, 102, 0.7);
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #333;
+        background-color: var(--light-bg);
+        padding-top: 76px;
+        /* Offset for fixed navbar */
+        overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .navbar-brand {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+        background-color: var(--white);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-bottom: 3px solid var(--primary-orange);
+        padding: 15px 0;
+        transition: all 0.3s;
+    }
+
+    .navbar-brand {
+        font-weight: 800;
+        font-size: 1.6rem;
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+    }
+
+    .navbar-brand span {
+        color: var(--primary-orange);
+    }
+
+    .nav-link {
+        color: var(--primary-blue);
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin: 0 10px;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--primary-orange);
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-orange);
+        transition: width 0.3s;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    .navbar-toggler {
+        border: none;
+        color: var(--primary-blue);
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    /* --- PAGE SECTIONS (SPA LOGIC) --- */
+    .page-section {
+        display: none;
+        min-height: 85vh;
+        padding-bottom: 60px;
+    }
+
+    .page-section.active {
+        display: block;
+    }
+
+    /* --- HEADERS --- */
+    .section-title {
+        position: relative;
+        display: inline-block;
+        color: var(--primary-blue);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        padding-bottom: 15px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary-orange);
+    }
+
+    /* --- HOME CAROUSEL --- */
+    .carousel-item {
+        height: 500px;
+    }
+
+    .carousel-item img {
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.6);
+        /* Darken image for text readability */
+    }
+
+    .carousel-caption {
+        bottom: 35%;
+        text-align: left;
+    }
+
+    .carousel-caption h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+    }
+
+    .carousel-caption p {
+        font-size: 1.2rem;
+        max-width: 600px;
+    }
+
+    .btn-custom {
+        background-color: var(--primary-orange);
+        color: white;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+        border: 2px solid var(--primary-orange);
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-custom:hover {
+        background-color: transparent;
+        color: var(--primary-orange);
+    }
+
+    .btn-outline-custom {
+        border: 2px solid var(--white);
+        color: white;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s;
+        margin-left: 10px;
+    }
+
+    .btn-outline-custom:hover {
+        background-color: var(--white);
+        color: var(--primary-blue);
+    }
+
+    /* --- CARDS & SERVICES --- */
+    .service-card {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        height: 100%;
+        border-bottom: 4px solid transparent;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        border-bottom: 4px solid var(--primary-orange);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-box {
+        width: 70px;
+        height: 70px;
+        background-color: rgba(247, 148, 29, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: var(--primary-orange);
+        font-size: 1.8rem;
+        transition: all 0.3s;
+    }
+
+    .service-card:hover .icon-box {
+        background-color: var(--primary-orange);
+        color: white;
+    }
+
+    .service-title {
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin-bottom: 15px;
+    }
+
+    /* footer */
+    .social-icons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .social-link {
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+        transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+
+    .social-link:focus {
+        outline: 3px solid rgba(0, 0, 0, .12);
+        outline-offset: 2px;
+    }
+
+    .social-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+        opacity: 0.98;
+    }
+
+    /* brand colors */
+    .social-link.linkedin {
+        background: #0077B5;
+    }
+
+    .social-link.twitter {
+        background: #1DA1F2;
+    }
+
+    .social-link.facebook {
+        background: #1877F2;
+    }
+
+    .social-link.instagram {
+        background: radial-gradient(circle at 15% 15%, #feda75 0%, #f58529 20%, #dd2a7b 50%, #515BD4 100%);
+    }
+
+    .social-link.youtube {
+        background: #FF0000;
+    }
+
+    .social-link.github {
+        background: grey;
+    }
+
+    /* icon color override to ensure white icons */
+    .social-link i {
+        color: #fff;
+        font-size: 10px;
+    }
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                OPPTY <span>TECHHUB</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#" onclick="showPage('home')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('about')">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('services')">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('gis')">GIS Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('why')">Why Us</a></li>
+                    <li class="nav-item"><a class="btn btn-custom ms-lg-3" href="#"
+                            onclick="showPage('contact')">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="home" class="page-section active animate__animated animate__fadeIn">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1740&auto=format&fit=crop"
+                            class="d-block w-100" alt="Tech Office">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="animate__animated animate__fadeInDown">Innovate. Transform. Grow.</h1>
+                            <p class="animate__animated animate__fadeInUp">Leading the way in IT Services, AI Solutions,
+                                and
+                                GIS Mapping for the digital age.</p>
+                            <div class="mt-4 animate__animated animate__fadeInUp">
+                                <button class="btn btn-custom" onclick="showPage('services')">Our Services</button>
+                                <button class="btn btn-outline-custom" onclick="showPage('contact')">Get Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1744&auto=format&fit=crop"
+                            class="d-block w-100" alt="GIS Data">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="animate__animated animate__fadeInDown">Advanced GIS Solutions</h1>
+                            <p class="animate__animated animate__fadeInUp">Turning spatial data into strategic
+                                intelligence
+                                with our expert GIS analysts.</p>
+                            <div class="mt-4 animate__animated animate__fadeInUp">
+                                <button class="btn btn-custom" onclick="showPage('gis')">Explore GIS</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1553877615-30c73e63cf53?q=80&w=1740&auto=format&fit=crop"
+                            class="d-block w-100" alt="Team Work">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="animate__animated animate__fadeInDown">Client-Centric Approach</h1>
+                            <p class="animate__animated animate__fadeInUp">We partner with industry leaders in Hyderabad
+                                and
+                                Udaipur to drive real measurable success.</p>
+                            <div class="mt-4 animate__animated animate__fadeInUp">
+                                <button class="btn btn-custom" onclick="showPage('about')">Who We Are</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+            <div class="container mt-5 pt-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h5 style="color: var(--primary-orange); font-weight:700; letter-spacing: 1px;">EXECUTIVE
+                            SUMMARY
+                        </h5>
+                        <h2
+                            style="color: var(--primary-blue); font-weight:800; font-size: 2.5rem; margin-bottom: 20px;">
+                            Your Partner for Digital Transformation</h2>
+                        <p class="lead text-secondary">Oppty TechHub Private Limited is a powerhouse of innovation,
+                            delivering cutting-edge IT, BPO, AI, and GIS solutions.</p>
+                        <p>With strategic offices in <strong>Hyderabad</strong> and <strong>Udaipur</strong>, we don't
+                            just
+                            act as vendors; we are partners in your growth story. Our commitment to integrity and
+                            client-centricity ensures long-term partnerships.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> End-to-end IT
+                                Infrastructure</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Specialized GIS
+                                Mapping
+                                Teams</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> AI & AIOps
+                                Implementation
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 position-relative mt-4 mt-lg-0">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                            class="img-fluid rounded-4 shadow-lg" alt="Team">
+                        <div class="position-absolute bg-white p-3 rounded shadow d-none d-md-block"
+                            style="bottom: -20px; left: -20px; border-left: 5px solid var(--primary-orange);">
+                            <p class="mb-0 fw-bold text-primary">Proven Excellence</p>
+                            <small>Driving Business Growth</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Footer section-->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-about">
+                    <img src="assets/oppty.png" alt="Oppty BPO Logo" class="footer-logo">
+                    <p>
+                        Power up your success with innovative IT, BPO, E-commerce, Web Development, and AI solutions
+                        tailored to your vision.
+                    </p>
+                </div>
+
+                <!-- Column 2: Hyderabad Location -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Hyderabad Locations</h4>
+                    <p>
+                        Hyderabad - Flat number 601, Mahitha's green galaxy, CBCID Colony, NRSA Colony, Bagath Singh
+                        Nagar Phase 2, Kukatpally, Hyderabad, Telangana 500085
+                    </p>
+                </div>
+
+                <!-- Column 3: Udaipur Location -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Udaipur Locations</h4>
+                    <p>
+                        Udaipur - Plot No: 26, 100 Feet Rd, Shobhagpura, Udaipur, Rajasthan 313011
+                    </p>
+                </div>
+
+                <!-- Column 4: Contact Us -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Contact Us</h4>
+                    <p>
+                        <a href="mailto:info@oppty.in">info@oppty.in</a>
+                    </p>
+                    <p>
+                        <a href="tel:+919491209900">+91-9491209900</a>
+                    </p>
+                </div>
+
+                <!-- Column 5: Quick Links -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-media" style="margin-left: 50px;">
+            <!-- <h5 style="margin-right: 1050px;color: #f76e11;">Social Media</h5> -->
+            <div class="social-icons" aria-label="Social links" style="margin-top:18px;">
+                <style>
+
+                </style>
+
+                <a class="social-link linkedin" href="https://www.linkedin.com/" target="_blank"
+                    rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <a class="social-link twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                    title="Twitter" aria-label="Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+
+                <a class="social-link facebook" href="https://www.facebook.com/wnsglobalservices/" target="_blank"
+                    rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+
+                <a class="social-link instagram" href="https://www.instagram.com/procareer.tech/#" target="_blank"
+                    rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+
+                <a class="social-link youtube" href="https://www.youtube.com/channel/UC5i64n89D6YSoiyGA5JBxMQ"
+                    target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">
+                    <i class="fa fa-youtube-play"></i>
+                </a>
+
+                <a class="social-link github" href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                    title="GitHub" aria-label="GitHub">
+                    <i class="fa fa-github"></i>
+                </a>
+
+                <script>
+                    // Ensure links open in a new tab reliably and safely (also supports cases where target attr may be removed)
+                    (function () {
+                        document.querySelectorAll('.social-link').forEach(function (el) {
+                            el.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                var url = el.href;
+                                // open in new tab with noopener + noreferrer for security
+                                window.open(url, '_blank', 'noopener,noreferrer');
+                            });
+                        });
+                    })();
+                </script>
+            </div>
+        </div>
+    </footer>
+    </footer>
+    <!-- Copyright Section -->
+    <footer class="site-footer">
+        <div class="footer-top-border"></div>
+
+        <div class="footer-content">
+            <div class="recognitions-container">
+                <img src="assets/copyright1.png.png" alt="Ministry of MSME, Govt. of India">
+                <img src="assets/copyright2.png.png" alt="ISO 9001:2015 Certified">
+                <img src="assets/copyright3.jpg.jpg" alt="ISO 22000:2018 Certified">
+            </div>
+            <div class="copyright-text">
+                <p>&copy;<span id="copyright-year">2025</span> Oppty. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+</body>
