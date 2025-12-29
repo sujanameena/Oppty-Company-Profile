@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppty TechHub | Digital Transformation Partner</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <style>
+        /* --- BRAND COLORS --- */
+        :root {
+            --primary-orange: #F7941D;
+            --primary-blue: #003366;
+            --light-bg: #F4F7FA;
+            --white: #ffffff;
+            --dark-overlay: rgba(0, 51, 102, 0.7);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: var(--light-bg);
+            padding-top: 76px; /* Offset for fixed navbar */
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--primary-orange);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar-brand span {
+            color: var(--primary-orange);
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-orange);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            color: var(--primary-blue);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* --- PAGE SECTIONS (SPA LOGIC) --- */
+        .page-section {
+            display: none;
+            min-height: 85vh;
+            padding-bottom: 60px;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+
+        /* --- HEADERS --- */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            color: var(--primary-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-orange);
+        }
+
+        /* --- HOME CAROUSEL --- */
+        .carousel-item {
+            height: 500px;
+        }
+
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6); /* Darken image for text readability */
+        }
+
+        .carousel-caption {
+            bottom: 35%;
+            text-align: left;
+        }
+
+        .carousel-caption h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        
+        .carousel-caption p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            border: 2px solid var(--primary-orange);
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-custom:hover {
+            background-color: transparent;
+            color: var(--primary-orange);
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--white);
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+            margin-left: 10px;
+        }
+        
+        .btn-outline-custom:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* --- CARDS & SERVICES --- */
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            border-bottom: 4px solid transparent;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--primary-orange);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(247, 148, 29, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-orange);
+            font-size: 1.8rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .icon-box {
+            background-color: var(--primary-orange);
+            color: white;
+        }
+
+        .service-title {
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* --- GIS SECTION --- */
+        .gis-bg {
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,51,102,0.3);
+        }
+
+        /* --- STATS COUNTER --- */
+        .stat-box {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo span { color: var(--primary-orange); }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-link:hover { background: var(--primary-orange); color: white; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .carousel-caption h1 { font-size: 2rem; }
+            .carousel-item { height: 400px; }
+            .section-title { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                OPPTY <span>TECHHUB</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#" onclick="showPage('home')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('about')">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('services')">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('gis')">GIS Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('why')">Why Us</a></li>
+                    <li class="nav-item"><a class="btn btn-custom ms-lg-3" href="#" onclick="showPage('contact')">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <div id="home" class="page-section active animate__animated animate__fadeIn">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1740&auto=format&fit=crop" class="d-block w-100" alt="Tech Office">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="animate__animated animate__fadeInDown">Innovate. Transform. Grow.</h1>
+                            <p class="animate__animated animate__fadeInUp">Leading the way in IT Services, AI Solutions, and GIS Mapping for the digital age.</p>
+                            <div class="mt-4 animate__animated animate__fadeInUp">
+                                <button class="btn btn-custom" onclick="showPage('services')">Our Services</button>
+                                <button class="btn btn-outline-custom" onclick="showPage('contact')">Get Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1744&auto=format&fit=crop" class="d-block w-100" alt="GIS Data">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="animate__animated animate__fadeInDown">Advanced GIS Solutions</h1>
+                            <p class="animate__animated animate__fadeInUp">Turning spatial data into strategic intelligence with our expert GIS analysts.</p>
+                            <div class="mt-4 animate__animated animate__fadeInUp">
+                                <button class="btn btn-custom" onclick="showPage('gis')">Explore GIS</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1553877615-30c73e63cf53?q=80&w=1740&auto=format&fit=crop" class="d-block w-100" alt="Team Work">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="animate__animated animate__fadeInDown">Client-Centric Approach</h1>
+                            <p class="animate__animated animate__fadeInUp">We partner with industry leaders in Hyderabad and Udaipur to drive real measurable success.</p>
+                            <div class="mt-4 animate__animated animate__fadeInUp">
+                                <button class="btn btn-custom" onclick="showPage('about')">Who We Are</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5 pt-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h5 style="color: var(--primary-orange); font-weight:700; letter-spacing: 1px;">EXECUTIVE SUMMARY</h5>
+                        <h2 style="color: var(--primary-blue); font-weight:800; font-size: 2.5rem; margin-bottom: 20px;">Your Partner for Digital Transformation</h2>
+                        <p class="lead text-secondary">Oppty TechHub Private Limited is a powerhouse of innovation, delivering cutting-edge IT, BPO, AI, and GIS solutions.</p>
+                        <p>With strategic offices in <strong>Hyderabad</strong> and <strong>Udaipur</strong>, we don't just act as vendors; we are partners in your growth story. Our commitment to integrity and client-centricity ensures long-term partnerships.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> End-to-end IT Infrastructure</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Specialized GIS Mapping Teams</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> AI & AIOps Implementation</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 position-relative mt-4 mt-lg-0">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow-lg" alt="Team">
+                        <div class="position-absolute bg-white p-3 rounded shadow d-none d-md-block" style="bottom: -20px; left: -20px; border-left: 5px solid var(--primary-orange);">
+                            <p class="mb-0 fw-bold text-primary">Proven Excellence</p>
+                            <small>Driving Business Growth</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="page-section animate__animated animate__fadeInUp">
+            <div class="container mt-5">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Company Overview</h2>
+                    <p class="text-muted w-75 mx-auto">We are dedicated to delivering innovative solutions that drive client success and foster long-term partnerships through integrity and excellence.</p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <div class="p-5 h-100 rounded-4 shadow-sm" style="background: white; border-top: 5px solid var(--primary-blue);">
+                            <i class="fas fa-bullseye fa-3x mb-3" style="color: var(--primary-orange);"></i>
+                            <h3 class="fw-bold text-primary">Our Mission</h3>
+                            <p class="text-muted">To deliver innovative solutions that drive client success and foster long-term partnerships through integrity and excellence. We bridge the gap between complex technology and business needs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-5 h-100 rounded-4 shadow-sm" style="background: white; border-top: 5px solid var(--primary-orange);">
+                            <i class="fas fa-eye fa-3x mb-3 text-primary"></i>
+                            <h3 class="fw-bold" style="color: var(--primary-orange);">Our Vision</h3>
+                            <p class="text-muted">To be a leading global provider of comprehensive business services, recognized for our commitment to collaboration and client-centricity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-4 shadow-sm">
+                    <h3 class="text-center mb-4 fw-bold text-primary">Our Core Values</h3>
+                    <div class="row text-center">
+                        <div class="col-6 col-md">
+                            <div class="py-3"><i class="fas fa-lightbulb fa-2x mb-2 text-warning"></i><br><strong>Innovation</strong></div>
+                        </div>
+                        <div class="col-6 col-md">
+                            <div class="py-3"><i class="fas fa-medal fa-2x mb-2 text-warning"></i><br><strong>Excellence</strong></div>
+                        </div>
+                        <div class="col-6 col-md">
+                            <div class="py-3"><i class="fas fa-handshake fa-2x mb-2 text-warning"></i><br><strong>Integrity</strong></div>
+                        </div>
+                        <div class="col-6 col-md">
+                            <div class="py-3"><i class="fas fa-users fa-2x mb-2 text-warning"></i><br><strong>Client-Centric</strong></div>
+                        </div>
+                        <div class="col-6 col-md">
+                            <div class="py-3"><i class="fas fa-project-diagram fa-2x mb-2 text-warning"></i><br><strong>Collaboration</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="services" class="page-section animate__animated animate__fadeInUp">
+            <div class="container mt-5">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Service Portfolio</h2>
+                    <p class="lead">Comprehensive solutions tailored to your business needs.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                            <h4 class="service-title">IT Services</h4>
+                            <p class="text-muted small">Robust infrastructure, cybersecurity, and system integration designed to protect and grow your assets.</p>
+                            <ul class="list-unstyled small text-secondary mt-3">
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Managed IT Services</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Cybersecurity</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Consulting & Strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon-box"><i class="fas fa-headset"></i></div>
+                            <h4 class="service-title">BPO Solutions</h4>
+                            <p class="text-muted small">Enhance efficiency and reduce costs by outsourcing critical processes while maintaining high quality.</p>
+                            <ul class="list-unstyled small text-secondary mt-3">
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Customer Support</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Finance & Accounting</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Data Processing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon-box"><i class="fas fa-shopping-bag"></i></div>
+                            <h4 class="service-title">E-Commerce</h4>
+                            <p class="text-muted small">Establish and grow your online store with expert platform development and inventory management.</p>
+                            <ul class="list-unstyled small text-secondary mt-3">
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Platform Development</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Gateway Integration</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Store Setup</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon-box"><i class="fas fa-code"></i></div>
+                            <h4 class="service-title">Web Development</h4>
+                            <p class="text-muted small">Responsive, secure, and visually appealing websites that drive engagement and conversions.</p>
+                            <ul class="list-unstyled small text-secondary mt-3">
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Custom Web Apps</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>CMS Systems</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Performance Tuning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon-box"><i class="fas fa-brain"></i></div>
+                            <h4 class="service-title">AI Solutions</h4>
+                            <p class="text-muted small">Automate processes and gain actionable insights through Machine Learning and Natural Language Processing.</p>
+                            <ul class="list-unstyled small text-secondary mt-3">
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Machine Learning</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Data Analytics</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Process Automation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon-box"><i class="fas fa-server"></i></div>
+                            <h4 class="service-title">AIOps</h4>
+                            <p class="text-muted small">Transform IT operations with AI for proactive management, predictive analytics, and intelligent automation.</p>
+                            <ul class="list-unstyled small text-secondary mt-3">
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Intelligent Monitoring</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Predictive Maintenance</li>
+                                <li><i class="fas fa-angle-right text-warning me-2"></i>Automated Resolution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gis" class="page-section animate__animated animate__fadeInUp">
+            <div class="container mt-5">
+                <div class="gis-bg p-5 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h5 class="text-warning fw-bold mb-3">SPECIALIZED EXPERTISE</h5>
+                            <h2 class="fw-bold mb-4">GIS Mapping Solutions</h2>
+                            <p class="lead mb-4">Leverage advanced Geographic Information Systems (GIS) technology to visualize, analyze, and optimize spatial data.</p>
+                            <button class="btn btn-custom border-white" onclick="document.getElementById('gis-details').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Map Icon" style="width: 250px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="gis-details" class="row">
+                    <div class="col-lg-8">
+                        <h3 class="text-primary fw-bold mb-4">Our Capabilities</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-layer-group text-warning fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="fw-bold">Spatial Analysis</h5>
+                                        <p class="small text-muted">Detailed analysis and mapping for strategic decision making.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-database text-warning fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="fw-bold">Data Processing</h5>
+                                        <p class="small text-muted">High-volume GIS data collection, cleaning, and processing.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-satellite text-warning fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="fw-bold">Satellite Imagery</h5>
+                                        <p class="small text-muted">Advanced interpretation of aerial and satellite imagery.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-map-marked-alt text-warning fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="fw-bold">Custom Development</h5>
+                                        <p class="small text-muted">Building bespoke GIS applications for unique needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="p-4 bg-white shadow rounded border-start border-5 border-warning">
+                            <h4 class="text-primary fw-bold">Why Us for GIS?</h4>
+                            <hr>
+                            <p><strong>5+ Years Experience</strong></p>
+                            <p class="small text-muted">Specialized experience delivering complex spatial analysis.</p>
+                            <p><strong>60+ GIS Analysts</strong></p>
+                            <p class="small text-muted">A large, fully trained team proficient in industry-standard tools.</p>
+                            <p><strong>Large Scale Projects</strong></p>
+                            <p class="small text-muted">Capable of handling time-critical, high-volume assignments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="why" class="page-section animate__animated animate__fadeInUp">
+            <div class="container mt-5">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Why Choose Oppty TechHub?</h2>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3 col-6">
+                        <div class="stat-box">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Key Locations</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-box">
+                            <span class="stat-number">60+</span>
+                            <span class="stat-label">GIS Experts</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-box">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years GIS Exp</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-box">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Focus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="Meeting">
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="accordion" id="whyUsAccordion">
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        Diverse Expertise
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#whyUsAccordion">
+                                    <div class="accordion-body text-muted">
+                                        We hold specialized knowledge across IT, BPO, E-Commerce, AI, and GIS. This allows us to provide holistic end-to-end solutions that silos cannot match.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        Quality Assurance
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#whyUsAccordion">
+                                    <div class="accordion-body text-muted">
+                                        We utilize structured processes, rigorous reviews, and testing frameworks to ensure consistently high delivery quality for every project.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                        Cost-Effective Solutions
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#whyUsAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Our optimized delivery models and efficient resource allocation help control costs without compromising on quality or deadlines.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="page-section animate__animated animate__fadeInUp">
+            <div class="container mt-5">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Contact & Offices</h2>
+                    <p>Ready to start your transformation? Reach out to us.</p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-map-marker-alt text-warning fa-2x mb-3"></i>
+                                <h4 class="text-primary fw-bold">Hyderabad</h4>
+                                <p class="text-muted small">Flat No. 601, Mahitha's Green Galaxy, CBCID Colony,<br>NRSA Colony, Bagath Singh Nagar Ph-2,<br>Kukatpally, Hyderabad, Telangana 500085</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-map-marker-alt text-warning fa-2x mb-3"></i>
+                                <h4 class="text-primary fw-bold">Udaipur</h4>
+                                <p class="text-muted small">Plot No. 26, 100 Feet Road,<br>Shobhagpura,<br>Udaipur, Rajasthan 313011</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row shadow-lg rounded-4 overflow-hidden bg-white">
+                    <div class="col-lg-5 p-5 text-white d-flex flex-column justify-content-center" style="background-color: var(--primary-blue);">
+                        <h3 class="fw-bold mb-4">Get In Touch</h3>
+                        <p class="mb-4"><i class="fas fa-phone-alt me-3 text-warning"></i> +91 9491209900</p>
+                        <p class="mb-4"><i class="fas fa-envelope me-3 text-warning"></i> info@oppty.in</p>
+                        <p class="mb-4"><i class="fas fa-globe me-3 text-warning"></i> www.oppty.in</p>
+                        <hr class="my-4" style="opacity: 0.3;">
+                        <div class="d-flex gap-3">
+                            <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 p-5">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small fw-bold">Name</label>
+                                    <input type="text" class="form-control bg-light border-0 py-2">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small fw-bold">Email</label>
+                                    <input type="email" class="form-control bg-light border-0 py-2">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted small fw-bold">Subject</label>
+                                    <select class="form-select bg-light border-0 py-2">
+                                        <option>General Inquiry</option>
+                                        <option>IT Services</option>
+                                        <option>GIS Solutions</option>
+                                        <option>Careers</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted small fw-bold">Message</label>
+                                    <textarea class="form-control bg-light border-0 py-2" rows="4"></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="button" class="btn btn-custom w-100 py-3">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <h4 class="fw-bold footer-logo mb-3">OPPTY <span>TECHHUB</span></h4>
+            <p class="small text-white-50 mb-4">Empowering businesses through digital innovation and strategic partnerships.</p>
+            <div class="mb-4">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <p class="small text-white-50 mb-0">&copy; 2025 Oppty TechHub Private Limited. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // SPA Routing Logic
+        function showPage(pageId) {
+            // Remove active class from all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Add active class to target section
+            const target = document.getElementById(pageId);
+            if(target) {
+                target.classList.add('active');
+                
+                // Re-trigger animation by removing and adding class
+                target.classList.remove('animate__fadeInUp');
+                void target.offsetWidth; // trigger reflow
+                target.classList.add('animate__fadeInUp');
+
+                window.scrollTo(0, 0);
+
+                // Update Navbar State
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                // Find links that point to this pageId and activate them
+                const navLinks = document.querySelectorAll(`a[onclick="showPage('${pageId}')"]`);
+                navLinks.forEach(link => link.classList.add('active'));
+
+                // Close Mobile Menu
+                const navbarCollapse = document.getElementById('navbarNav');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
