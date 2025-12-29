@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Overview | Oppty TechHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fb; /* Light Page BG */
+            color: #0f2b4a; /* Primary Navy */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMATION UTILITIES --- */
+        /* Base Fade Up Class */
+        .anim-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                        transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Visible State */
+        .anim-fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger Delays */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+
+        /* --- MAIN CONTAINER --- */
+        .overview-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #0f2b4a;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #ff9f1c; /* Orange */
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: #666666;
+            font-weight: 300;
+        }
+
+        /* --- MISSION & VISION (Side-by-Side) --- */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .mv-card {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .mv-card.mission { border-top: 6px solid #0f2b4a; }
+        .mv-card.vision { border-top: 6px solid #ff9f1c; }
+
+        .mv-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .mission .mv-icon-wrapper { background-color: rgba(255, 159, 28, 0.1); color: #ff9f1c; }
+        .vision .mv-icon-wrapper { background-color: rgba(15, 43, 74, 0.1); color: #0f2b4a; }
+
+        .mv-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0f2b4a;
+        }
+
+        .mv-text {
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* --- NEW CORE VALUES LAYOUT (The Pillar Split) --- */
+        .core-split-container {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr; /* Image narrower than content */
+            gap: 50px;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+        }
+
+        /* Left Side: Hero Image */
+        .core-image-side {
+            height: 100%;
+            min-height: 600px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .core-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Overlay on the image to make text pop if needed */
+        .core-image-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(15, 43, 74, 0.5), transparent);
+        }
+        
+        .core-image-text {
+            position: absolute;
+            bottom: 40px;
+            left: 30px;
+            color: #ffffff;
+            z-index: 2;
+        }
+        .core-image-text h3 { font-size: 2rem; font-weight: 700; }
+
+        /* Right Side: Content List */
+        .core-content-side {
+            padding: 30px 20px 30px 0;
+        }
+        
+        .core-header-small {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .values-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Individual Value Pillar Item */
+        .value-pillar {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background-color: #f8faff; /* Very light blue tint */
+            border-radius: 12px;
+            border-left: 4px solid transparent; /* Hidden border initially */
+            transition: all 0.3s ease;
+        }
+
+        .value-pillar:hover {
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left-color: #ff9f1c; /* Orange accent on hover */
+            transform: translateX(10px); /* Subtle shift right */
+        }
+
+        .pillar-icon {
+            font-size: 1.6rem;
+            color: #0f2b4a;
+            margin-right: 25px;
+            margin-top: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .value-pillar:hover .pillar-icon {
+            color: #ff9f1c; /* Icon turns orange on hover */
+        }
+
+        .pillar-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f2b4a;
+            margin-bottom: 8px;
+        }
+
+        .pillar-content p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .core-split-container {
+                grid-template-columns: 1fr; /* Stack them */
+                padding: 30px;
+            }
+            .core-image-side {
+                min-height: 300px; /* Shorter image on mobile */
+                height: 300px;
+            }
+            .core-content-side {
+                padding: 20px 0 0 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mv-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="overview-section">
+        
+        <div class="section-header anim-fade-up">
+            <h2 class="section-title">Company Overview</h2>
+            <p class="section-desc">We are dedicated to delivering innovative solutions that drive client success and foster long-term partnerships through integrity and excellence.</p>
+        </div>
+
+        <div class="mv-grid">
+            
+            <div class="mv-card mission anim-fade-up">
+                <div class="mv-icon-wrapper">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="mv-title">Our Mission</h3>
+                <p class="mv-text">To deliver innovative solutions that drive client success and foster long-term partnerships through integrity and excellence. We bridge the gap between complex technology and business needs.</p>
+            </div>
+
+            <div class="mv-card vision anim-fade-up delay-100">
+                <div class="mv-icon-wrapper">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3 class="mv-title">Our Vision</h3>
+                <p class="mv-text">To be a leading global provider of comprehensive business services, recognized for our commitment to collaboration and client-centricity.</p>
+            </div>
+
+        </div>
+
+        <div class="core-split-container anim-fade-up delay-200">
+            
+            <div class="core-image-side">
+                <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Strength and Unity">
+                <div class="core-image-overlay"></div>
+                <div class="core-image-text">
+                    <h3>The Foundation of Our Success</h3>
+                </div>
+            </div>
+
+            <div class="core-content-side">
+                <h3 class="core-header-small">Our Core Values</h3>
+                
+                <div class="values-list">
+                    
+                    <div class="value-pillar anim-fade-up delay-100">
+                        <i class="fa-solid fa-lightbulb pillar-icon"></i>
+                        <div class="pillar-content">
+                            <h4>Innovation</h4>
+                            <p>Embracing new technologies and creative thinking to stay ahead of the curve and solve complex challenges.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-pillar anim-fade-up delay-200">
+                        <i class="fa-solid fa-medal pillar-icon"></i>
+                        <div class="pillar-content">
+                            <h4>Excellence</h4>
+                            <p>Delivering superior quality in every project with precision, dedication, and high standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-pillar anim-fade-up delay-300">
+                        <i class="fa-solid fa-handshake-angle pillar-icon"></i>
+                        <div class="pillar-content">
+                            <h4>Integrity</h4>
+                            <p>Upholding transparency, honesty, and strong ethical principles in all our dealings and partnerships.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-pillar anim-fade-up delay-400">
+                        <i class="fa-solid fa-users-gear pillar-icon"></i>
+                        <div class="pillar-content">
+                            <h4>Client-Centric</h4>
+                            <p>Prioritizing our clients' specific needs to ensure their measurable success and satisfaction.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-pillar anim-fade-up delay-500">
+                        <i class="fa-solid fa-people-arrows pillar-icon"></i>
+                        <div class="pillar-content">
+                            <h4>Collaboration</h4>
+                            <p>Working closely with internal teams and external stakeholders to achieve shared goals effectively.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Setup Intersection Observer
+            const observerOptions = {
+                threshold: 0.1, // Trigger when 10% of element is visible
+                rootMargin: "0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: Unobserve if you only want the animation to happen once
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.anim-fade-up');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
