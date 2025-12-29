@@ -1,279 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=
-    <div id="services" class="page-section animate__animated animate__fadeInUp">
-      <div class="container mt-5">
-        <div class="text-center mb-5">
-          <h2 class="section-title">Service Portfolio</h2>
-          <p class="lead">
-            Comprehensive solutions tailored to your business needs.
-          </p>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Portfolio</title>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- 1. COLOR PALETTE & BASICS --- */
+        :root {
+            --dark-blue: #0e2a47;      /* Primary Text Color */
+            --brand-orange: #ff9e1b;   /* Accent Color */
+            --bg-color: #f0f4f8;       /* Page Background */
+            --card-bg: #ffffff;        /* Card Background */
+            --text-grey: #555555;      /* Body Text */
+        }
 
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
-              <h4 class="service-title">IT Services</h4>
-              <p class="text-muted small">
-                Robust infrastructure, cybersecurity, and system integration
-                designed to protect and grow your assets.
-              </p>
-              <ul class="list-unstyled small text-secondary mt-3">
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Managed IT
-                  Services
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i
-                  >Cybersecurity
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Consulting
-                  & Strategy
-                </li>
-              </ul>
-            </div>
-          </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-          <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="icon-box"><i class="fas fa-headset"></i></div>
-              <h4 class="service-title">BPO Solutions</h4>
-              <p class="text-muted small">
-                Enhance efficiency and reduce costs by outsourcing critical
-                processes while maintaining high quality.
-              </p>
-              <ul class="list-unstyled small text-secondary mt-3">
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Customer
-                  Support
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Finance &
-                  Accounting
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Data
-                  Processing
-                </li>
-              </ul>
-            </div>
-          </div>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-grey);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
 
-          <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="icon-box"><i class="fas fa-shopping-bag"></i></div>
-              <h4 class="service-title">E-Commerce</h4>
-              <p class="text-muted small">
-                Establish and grow your online store with expert platform
-                development and inventory management.
-              </p>
-              <ul class="list-unstyled small text-secondary mt-3">
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Platform
-                  Development
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Gateway
-                  Integration
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Store
-                  Setup
-                </li>
-              </ul>
-            </div>
-          </div>
+        /* --- 2. HEADER SECTION --- */
+        .header-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-          <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="icon-box"><i class="fas fa-code"></i></div>
-              <h4 class="service-title">Web Development</h4>
-              <p class="text-muted small">
-                Responsive, secure, and visually appealing websites that drive
-                engagement and conversions.
-              </p>
-              <ul class="list-unstyled small text-secondary mt-3">
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Custom Web
-                  Apps
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>CMS
-                  Systems
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i
-                  >Performance Tuning
-                </li>
-              </ul>
-            </div>
-          </div>
+        .header-section h1 {
+            color: var(--dark-blue);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
 
-          <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="icon-box"><i class="fas fa-brain"></i></div>
-              <h4 class="service-title">AI Solutions</h4>
-              <p class="text-muted small">
-                Automate processes and gain actionable insights through Machine
-                Learning and Natural Language Processing.
-              </p>
-              <ul class="list-unstyled small text-secondary mt-3">
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Machine
-                  Learning
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Data
-                  Analytics
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Process
-                  Automation
-                </li>
-              </ul>
-            </div>
-          </div>
+        /* Orange underline under title */
+        .header-underline {
+            width: 80px;
+            height: 4px;
+            background-color: var(--brand-orange);
+            margin: 0 auto 20px auto;
+        }
 
-          <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="icon-box"><i class="fas fa-server"></i></div>
-              <h4 class="service-title">AIOps</h4>
-              <p class="text-muted small">
-                Transform IT operations with AI for proactive management,
-                predictive analytics, and intelligent automation.
-              </p>
-              <ul class="list-unstyled small text-secondary mt-3">
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i
-                  >Intelligent Monitoring
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Predictive
-                  Maintenance
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-warning me-2"></i>Automated
-                  Resolution
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+        .header-section p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* --- 3. GRID SYSTEM --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .grid-row {
+            display: grid;
+            /* Auto-fit creates columns that adjust to screen size automatically */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- 4. CARD DESIGN --- */
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden; /* Keeps image inside rounded corners */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .service-card:hover {
+            transform: translateY(-8px); /* Moves up slightly */
+            box-shadow: 0 15px 30px rgba(14, 42, 71, 0.15);
+        }
+
+        /* Image Styling */
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Ensures image covers area without stretching */
+            border-bottom: 4px solid var(--brand-orange); /* Orange divider line */
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        /* Icon Styling */
+        .icon-box {
+            font-size: 24px;
+            color: var(--brand-orange);
+            background-color: #fff8e1; /* Very light orange bg */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            color: var(--dark-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* --- 5. LIST STYLING --- */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            border-top: 1px solid #eee; /* Light separator line */
+            padding-top: 15px;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--dark-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Custom Orange Arrow for list items */
+        .feature-list li i {
+            color: var(--brand-orange);
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION HEADER -->
+    <div class="header-section">
+        <h1>Service Portfolio</h1>
+        <div class="header-underline"></div>
+        <p>Comprehensive solutions tailored to modernize your business infrastructure.</p>
     </div>
 
-    <div id="gis" class="page-section animate__animated animate__fadeInUp">
-      <div class="container mt-5">
-        <div class="gis-bg p-5 mb-5">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <h5 class="text-warning fw-bold mb-3">SPECIALIZED EXPERTISE</h5>
-              <h2 class="fw-bold mb-4">GIS Mapping Solutions</h2>
-              <p class="lead mb-4">
-                Leverage advanced Geographic Information Systems (GIS)
-                technology to visualize, analyze, and optimize spatial data.
-              </p>
-              <button
-                class="btn btn-custom border-white"
-                onclick="document.getElementById('gis-details').scrollIntoView({behavior: 'smooth'})"
-              >
-                Learn More
-              </button>
-            </div>
-            <div class="col-lg-6 text-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/854/854878.png"
-                alt="Map Icon"
-                style="
-                  width: 250px;
-                  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-                "
-              />
-            </div>
-          </div>
-        </div>
+    <!-- MAIN GRID CONTAINER -->
+    <div class="container">
+        <div class="grid-row">
 
-        <div id="gis-details" class="row">
-          <div class="col-lg-8">
-            <h3 class="text-primary fw-bold mb-4">Our Capabilities</h3>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="fas fa-layer-group text-warning fa-2x me-3"></i>
-                  <div>
-                    <h5 class="fw-bold">Spatial Analysis</h5>
-                    <p class="small text-muted">
-                      Detailed analysis and mapping for strategic decision
-                      making.
-                    </p>
-                  </div>
+            <!-- Card 1: IT Services -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&w=800&q=80" alt="Server Room" class="card-image">
+                <div class="card-content">
+                    <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="card-title">IT Services</h3>
+                    <p class="card-desc">Robust infrastructure, cybersecurity, and system integration designed to protect and grow your assets.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chevron-right"></i> Managed IT Services</li>
+                        <li><i class="fas fa-chevron-right"></i> Cybersecurity</li>
+                        <li><i class="fas fa-chevron-right"></i> Consulting & Strategy</li>
+                    </ul>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="fas fa-database text-warning fa-2x me-3"></i>
-                  <div>
-                    <h5 class="fw-bold">Data Processing</h5>
-                    <p class="small text-muted">
-                      High-volume GIS data collection, cleaning, and processing.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="fas fa-satellite text-warning fa-2x me-3"></i>
-                  <div>
-                    <h5 class="fw-bold">Satellite Imagery</h5>
-                    <p class="small text-muted">
-                      Advanced interpretation of aerial and satellite imagery.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="fas fa-map-marked-alt text-warning fa-2x me-3"></i>
-                  <div>
-                    <h5 class="fw-bold">Custom Development</h5>
-                    <p class="small text-muted">
-                      Building bespoke GIS applications for unique needs.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div
-              class="p-4 bg-white shadow rounded border-start border-5 border-warning"
-            >
-              <h4 class="text-primary fw-bold">Why Us for GIS?</h4>
-              <hr />
-              <p><strong>5+ Years Experience</strong></p>
-              <p class="small text-muted">
-                Specialized experience delivering complex spatial analysis.
-              </p>
-              <p><strong>60+ GIS Analysts</strong></p>
-              <p class="small text-muted">
-                A large, fully trained team proficient in industry-standard
-                tools.
-              </p>
-              <p><strong>Large Scale Projects</strong></p>
-              <p class="small text-muted">
-                Capable of handling time-critical, high-volume assignments.
-              </p>
+
+            <!-- Card 2: BPO Solutions -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Customer Support" class="card-image">
+                <div class="card-content">
+                    <div class="icon-box"><i class="fas fa-headset"></i></div>
+                    <h3 class="card-title">BPO Solutions</h3>
+                    <p class="card-desc">Enhance efficiency and reduce costs by outsourcing critical processes while maintaining high quality.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chevron-right"></i> Customer Support</li>
+                        <li><i class="fas fa-chevron-right"></i> Finance & Accounting</li>
+                        <li><i class="fas fa-chevron-right"></i> Data Processing</li>
+                    </ul>
+                </div>
             </div>
-          </div>
+
+            <!-- Card 3: E-Commerce -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80" alt="E-Commerce" class="card-image">
+                <div class="card-content">
+                    <div class="icon-box"><i class="fas fa-shopping-bag"></i></div>
+                    <h3 class="card-title">E-Commerce</h3>
+                    <p class="card-desc">Establish and grow your online store with expert platform development and inventory management.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chevron-right"></i> Platform Development</li>
+                        <li><i class="fas fa-chevron-right"></i> Gateway Integration</li>
+                        <li><i class="fas fa-chevron-right"></i> Store Setup</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4: Web Development -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Coding" class="card-image">
+                <div class="card-content">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <h3 class="card-title">Web Development</h3>
+                    <p class="card-desc">Responsive, secure, and visually appealing websites that drive engagement and conversions.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chevron-right"></i> Custom Web Apps</li>
+                        <li><i class="fas fa-chevron-right"></i> CMS Systems</li>
+                        <li><i class="fas fa-chevron-right"></i> Performance Tuning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 5: AI Solutions -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80" alt="AI Brain" class="card-image">
+                <div class="card-content">
+                    <div class="icon-box"><i class="fas fa-brain"></i></div>
+                    <h3 class="card-title">AI Solutions</h3>
+                    <p class="card-desc">Automate processes and gain actionable insights through Machine Learning and Natural Language Processing.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chevron-right"></i> Machine Learning</li>
+                        <li><i class="fas fa-chevron-right"></i> Data Analytics</li>
+                        <li><i class="fas fa-chevron-right"></i> Process Automation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 6: AIOps -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Center" class="card-image">
+                <div class="card-content">
+                    <div class="icon-box"><i class="fas fa-server"></i></div>
+                    <h3 class="card-title">AIOps</h3>
+                    <p class="card-desc">Transform IT operations with AI for proactive management, predictive analytics, and intelligent automation.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chevron-right"></i> Intelligent Monitoring</li>
+                        <li><i class="fas fa-chevron-right"></i> Predictive Maintenance</li>
+                        <li><i class="fas fa-chevron-right"></i> Automated Resolution</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-      </div>
     </div>
-    , initial-scale=1.0">
-    <title>Document</title>
-  </head>
-  <body></body>
+
+</body>
 </html>
