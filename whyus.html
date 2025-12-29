@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Choose Oppty TechHub - Expanded</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* --- CSS VARIABLES & RESET --- */
         :root {
-            --primary-navy: #0f2b4a;   /* Corporate Navy */
-            --accent-orange: #ff9f1c;  /* Brand Orange */
-            --bg-light: #f8fbff;       /* Very Light Blue Background */
+            --primary-navy: #0f2b4a;
+            /* Corporate Navy */
+            --accent-orange: #ff9f1c;
+            /* Brand Orange */
+            --bg-light: #f8fbff;
+            /* Very Light Blue Background */
             --white: #ffffff;
             --text-grey: #555555;
             --border-color: #e0e0e0;
@@ -20,7 +25,11 @@
             --transition: all 0.4s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -31,7 +40,8 @@
         }
 
         .container {
-            max-width: 1000px; /* Slightly narrower for better reading focus */
+            max-width: 1000px;
+            /* Slightly narrower for better reading focus */
             margin: 0 auto;
         }
 
@@ -78,15 +88,16 @@
         .accordion-item {
             background: var(--white);
             border-radius: var(--radius);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             transition: var(--transition);
-            border-left: 5px solid transparent; /* Hidden border for active state */
+            border-left: 5px solid transparent;
+            /* Hidden border for active state */
         }
 
         .accordion-item.active {
             border-left-color: var(--accent-orange);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Header (Clickable Area) */
@@ -146,7 +157,8 @@
         .body-inner {
             padding: 0 30px 30px 30px;
             display: grid;
-            grid-template-columns: 3fr 2fr; /* Text takes more space than image */
+            grid-template-columns: 3fr 2fr;
+            /* Text takes more space than image */
             gap: 30px;
             align-items: center;
             opacity: 0;
@@ -179,7 +191,8 @@
         }
 
         .body-text li::before {
-            content: '\f00c'; /* Checkmark */
+            content: '\f00c';
+            /* Checkmark */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             color: var(--accent-orange);
@@ -192,7 +205,7 @@
             height: 200px;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .body-image img {
@@ -203,29 +216,35 @@
         }
 
         .accordion-item:hover .body-image img {
-            transform: scale(1.05); /* Subtle zoom on hover */
+            transform: scale(1.05);
+            /* Subtle zoom on hover */
         }
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             .body-inner {
-                grid-template-columns: 1fr; /* Stack text and image */
+                grid-template-columns: 1fr;
+                /* Stack text and image */
             }
+
             .body-image {
                 height: 180px;
-                order: -1; /* Move image to top of body on mobile */
+                order: -1;
+                /* Move image to top of body on mobile */
                 margin-bottom: 15px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
-        
+
         <header class="section-header">
             <h2 class="section-title">Why Choose Oppty TechHub?</h2>
-            <p class="section-subtitle">We combine technical excellence with a deep understanding of business strategy to deliver results that matter.</p>
+            <p class="section-subtitle">We combine technical excellence with a deep understanding of business strategy
+                to deliver results that matter.</p>
         </header>
 
         <div class="accordion">
@@ -241,15 +260,12 @@
                 <div class="accordion-body">
                     <div class="body-inner">
                         <div class="body-text">
-                            <p>We don't just write code; we build ecosystems. Our specialized knowledge spans critical sectors including IT infrastructure, BPO operations, E-commerce scaling, and advanced GIS Mapping.</p>
-                            <ul>
-                                <li><strong>Full-Stack Development:</strong> React, Node.js, Python, & AWS.</li>
-                                <li><strong>Geospatial Tech:</strong> ArcGIS, QGIS, & Remote Sensing.</li>
-                                <li><strong>Business Logic:</strong> ERP integration & Workflow Automation.</li>
-                            </ul>
+                            <p>Specialized knowledge across IT, BPO, e-commerce, web development, AI, AIOps, and GIS
+                                Mapping enables end‑to‑end solutions aligned to your business goals.</p>
                         </div>
                         <div class="body-image">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Diverse Technical Expertise">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Diverse Technical Expertise">
                         </div>
                     </div>
                 </div>
@@ -266,15 +282,13 @@
                 <div class="accordion-body">
                     <div class="body-inner">
                         <div class="body-text">
-                            <p>Your goals become our roadmap. We adopt an Agile methodology that ensures transparency and adaptability. From the initial discovery phase to final deployment, you are an integral part of the process.</p>
-                            <ul>
-                                <li>Transparent Sprint Planning & Reviews.</li>
-                                <li>Dedicated Project Managers for every account.</li>
-                                <li>Regular strategic alignment workshops.</li>
-                            </ul>
+                            <p>Engagement models built around your objectives, clear communication, and measurable
+                                outcomes ensure long‑term, value‑driven partnerships.</p>
+
                         </div>
                         <div class="body-image">
-                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Client Focused Meeting">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Client Focused Meeting">
                         </div>
                     </div>
                 </div>
@@ -291,15 +305,13 @@
                 <div class="accordion-body">
                     <div class="body-inner">
                         <div class="body-text">
-                            <p>Stay ahead of the curve with future-proof solutions. We leverage modern frameworks and cloud-native architectures to ensure your applications are scalable, secure, and incredibly fast.</p>
-                            <ul>
-                                <li>Cloud-Native Architecture (Azure/AWS).</li>
-                                <li>AI & Machine Learning Integration.</li>
-                                <li>Microservices for maximum scalability.</li>
-                            </ul>
+                            <p>Use of modern platforms, tools, and frameworks to deliver scalable, secure, and
+                                future‑ready solutions.</p>
+
                         </div>
                         <div class="body-image">
-                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Innovative Technology">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Innovative Technology">
                         </div>
                     </div>
                 </div>
@@ -316,15 +328,12 @@
                 <div class="accordion-body">
                     <div class="body-inner">
                         <div class="body-text">
-                            <p>Quality isn't an afterthought; it's embedded in our code. We utilize automated testing frameworks and rigorous code reviews to maintain ISO-standard delivery quality across all projects.</p>
-                            <ul>
-                                <li>Automated Testing (Selenium/Cypress).</li>
-                                <li>Continuous Integration/Deployment (CI/CD).</li>
-                                <li>Performance & Security Audits.</li>
-                            </ul>
+                            <p>Structured processes, reviews, and testing frameworks to maintain consistently high
+                                delivery quality.</p>
                         </div>
                         <div class="body-image">
-                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quality Assurance Testing">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Quality Assurance Testing">
                         </div>
                     </div>
                 </div>
@@ -341,15 +350,13 @@
                 <div class="accordion-body">
                     <div class="body-inner">
                         <div class="body-text">
-                            <p>Maximize your ROI with our optimized delivery models. We combine onsite strategy with offshore execution to provide elite-level development at a competitive price point, without compromising on quality.</p>
-                            <ul>
-                                <li>Flexible Engagement Models (Fixed/T&M).</li>
-                                <li>Optimized Resource Allocation.</li>
-                                <li>Reduced Operational Overhead.</li>
-                            </ul>
+                            <p>Optimized delivery models and efficient resource allocation help control costs without
+                                compromising on quality.</p>
+
                         </div>
                         <div class="body-image">
-                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cost Effective Growth">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Cost Effective Growth">
                         </div>
                     </div>
                 </div>
@@ -366,15 +373,13 @@
                 <div class="accordion-body">
                     <div class="body-inner">
                         <div class="body-text">
-                            <p>Our relationship doesn't end at deployment. We offer comprehensive maintenance packages and responsive support to ensure your business runs smoothly 24/7.</p>
-                            <ul>
-                                <li>24/7 Monitoring & Incident Response.</li>
-                                <li>Regular Security Patches & Updates.</li>
-                                <li>Dedicated Support Ticketing System.</li>
-                            </ul>
+                            <p>Responsive support, maintenance, and continuous improvement to keep your solutions
+                                performing reliably.</p>
+
                         </div>
                         <div class="body-image">
-                            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dedicated Support Team">
+                            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Dedicated Support Team">
                         </div>
                     </div>
                 </div>
@@ -423,4 +428,5 @@
     </script>
 
 </body>
+
 </html>
